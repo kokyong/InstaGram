@@ -12,15 +12,19 @@ import UIKit
 class UserDetail {
     
     var userName : String?
-    var profileImage : URL?
+    var profilePicture : URL?
     var userID : String?
-
+    
     init(withDictionary dictionary: [String:Any]) {
         
         userName = dictionary["userName"] as? String
         userID = dictionary["userID"] as? String
         
-        
+        if let pictureURL = dictionary["profilePicture"] as? String {
+            
+            profilePicture = URL(string: pictureURL)
+            
+        }
         
     }
     
