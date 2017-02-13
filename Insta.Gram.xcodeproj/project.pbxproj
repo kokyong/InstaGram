@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12C59A0B87297C3A93C5F56D /* Pods_Insta_Gram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03398B3C20053A6F879CA64 /* Pods_Insta_Gram.framework */; };
+		38EBB0F91E515F3D00D8A40F /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EBB0F81E515F3D00D8A40F /* Auth.storyboard */; };
 		9417324A1E4DAF2300D90FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941732491E4DAF2300D90FBE /* AppDelegate.swift */; };
 		9417324C1E4DAF2300D90FBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9417324B1E4DAF2300D90FBE /* LoginViewController.swift */; };
 		9417324F1E4DAF2300D90FBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9417324D1E4DAF2300D90FBE /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38EBB0F81E515F3D00D8A40F /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		941732461E4DAF2300D90FBE /* Insta.Gram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insta.Gram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		941732491E4DAF2300D90FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9417324B1E4DAF2300D90FBE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				941732491E4DAF2300D90FBE /* AppDelegate.swift */,
 				9417324B1E4DAF2300D90FBE /* LoginViewController.swift */,
+				38EBB0F81E515F3D00D8A40F /* Auth.storyboard */,
 				C0BC48451E4DB9F2001DA1BD /* CreateAccountViewController.swift */,
 				9417324D1E4DAF2300D90FBE /* Main.storyboard */,
 				941732531E4DAF2300D90FBE /* Assets.xcassets */,
@@ -164,6 +167,7 @@
 				941732541E4DAF2300D90FBE /* Assets.xcassets in Resources */,
 				9417325F1E4DB3CC00D90FBE /* GoogleService-Info .plist in Resources */,
 				9417324F1E4DAF2300D90FBE /* Main.storyboard in Resources */,
+				38EBB0F91E515F3D00D8A40F /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
