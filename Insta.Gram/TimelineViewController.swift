@@ -28,10 +28,13 @@ class TimelineViewController: UIViewController {
         
         didSet{
             
-//            imageButton.addTarget(self, action: #selector(displayImagePicker), for: .touchUpInside)
-//
-//            addPostButtonPressed.(self, action: #selector(displayImagePicker), for: .touchUpInside)
+            let storyboard = UIStoryboard(name: "NewsFeed", bundle: Bundle.main)
+            guard let controller = storyboard.instantiateViewController(withIdentifier: "publishPostViewController") as? publishPostViewController else {return}
             
+            
+            navigationController?.pushViewController(controller, animated: true)
+            
+        
         }
     }
     

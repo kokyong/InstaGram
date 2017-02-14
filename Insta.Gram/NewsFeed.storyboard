@@ -95,7 +95,11 @@
                                 <rect key="frame" x="0.0" y="-4" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="New Post" id="Wyb-2N-Dee">
-                                        <barButtonItem key="rightBarButtonItem" title="Post" id="Rb1-Tb-jad"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="Rb1-Tb-jad">
+                                            <connections>
+                                                <action selector="postButtonPressed:" destination="gUq-Nz-Jia" id="bFB-8Q-Iiu"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -134,7 +138,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="postBarButtonPressed" destination="Rb1-Tb-jad" id="Wj0-q7-UUK"/>
+                        <outlet property="galleryButtonPressed" destination="uh8-mc-nCj" id="63C-FV-trn"/>
                         <outlet property="previewImage" destination="IS2-OM-r1T" id="tHv-Rw-Kr1"/>
                         <outlet property="writeCaption" destination="reJ-TM-82T" id="Kia-iu-DBB"/>
                     </connections>
@@ -218,7 +222,7 @@
         <!--Navigation Controller-->
         <scene sceneID="2cF-RA-LJg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="edb-ge-9aR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigation" automaticallyAdjustsScrollViewInsets="NO" id="edb-ge-9aR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S5S-EY-6n0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
