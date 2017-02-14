@@ -169,6 +169,45 @@
             </objects>
             <point key="canvasLocation" x="922.39999999999998" y="8.5457271364317844"/>
         </scene>
+        <!--Follower View Controller-->
+        <scene sceneID="YyQ-pN-tRW">
+            <objects>
+                <viewController id="Rew-dd-Gyu" customClass="FollowerViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kyr-mX-xyH"/>
+                        <viewControllerLayoutGuide type="bottom" id="z0g-tJ-WGh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MFc-ei-Heh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wj7-7J-MUu">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Follower" id="Nv5-2Z-dkp"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UQr-JO-bm6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UQr-JO-bm6" firstAttribute="top" secondItem="Wj7-7J-MUu" secondAttribute="bottom" id="6rY-j5-RC4"/>
+                            <constraint firstAttribute="trailing" secondItem="UQr-JO-bm6" secondAttribute="trailing" id="6xC-2X-c13"/>
+                            <constraint firstItem="Wj7-7J-MUu" firstAttribute="top" secondItem="kyr-mX-xyH" secondAttribute="bottom" id="AhA-mB-viF"/>
+                            <constraint firstItem="z0g-tJ-WGh" firstAttribute="top" secondItem="UQr-JO-bm6" secondAttribute="bottom" id="MVg-Ac-dZl"/>
+                            <constraint firstItem="UQr-JO-bm6" firstAttribute="leading" secondItem="MFc-ei-Heh" secondAttribute="leading" id="UUP-sP-dne"/>
+                            <constraint firstItem="Wj7-7J-MUu" firstAttribute="leading" secondItem="MFc-ei-Heh" secondAttribute="leading" id="XeQ-9e-WfV"/>
+                            <constraint firstAttribute="trailing" secondItem="Wj7-7J-MUu" secondAttribute="trailing" id="ntZ-12-u4n"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qNs-t5-Eg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="687"/>
+        </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="0XR-Cy-Mzk">
             <objects>
@@ -222,6 +261,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvo-vD-XzJ">
+                                <rect key="frame" x="157" y="552" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Confirm!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -247,6 +293,7 @@
                     </view>
                     <connections>
                         <outlet property="changeProfilePictureButton" destination="XvR-vC-Jkf" id="gTp-dy-bGM"/>
+                        <outlet property="confirmEditButton" destination="Lvo-vD-XzJ" id="SP9-f5-V2K"/>
                         <outlet property="descriptionTF" destination="C7h-wC-rSX" id="aH3-vx-D5I"/>
                         <outlet property="emailTF" destination="Ex5-Gj-4uW" id="YPF-9H-2Je"/>
                         <outlet property="passwordTF" destination="pHV-4G-7q8" id="06A-eg-nQe"/>
@@ -256,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFm-09-TIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633" y="9"/>
+            <point key="canvasLocation" x="1632.8" y="8.5457271364317844"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AHa-Tw-620">
@@ -275,6 +322,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cA0-Td-R1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="9"/>
+        </scene>
+        <!--Following View Controller-->
+        <scene sceneID="XoC-0s-t1h">
+            <objects>
+                <viewController id="DQH-rJ-AMe" customClass="FollowingViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4JP-AQ-xdX"/>
+                        <viewControllerLayoutGuide type="bottom" id="9tI-mD-RT3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UXa-0b-6Vg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pm-NS-FbB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Following" id="xvo-gK-EpV"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AeK-83-w1d">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7pm-NS-FbB" secondAttribute="trailing" id="10v-DH-Dy7"/>
+                            <constraint firstItem="7pm-NS-FbB" firstAttribute="leading" secondItem="UXa-0b-6Vg" secondAttribute="leading" id="3Q2-yA-0fn"/>
+                            <constraint firstItem="7pm-NS-FbB" firstAttribute="top" secondItem="4JP-AQ-xdX" secondAttribute="bottom" id="7PV-Nj-jhw"/>
+                            <constraint firstItem="9tI-mD-RT3" firstAttribute="top" secondItem="AeK-83-w1d" secondAttribute="bottom" id="PHm-16-wRs"/>
+                            <constraint firstItem="AeK-83-w1d" firstAttribute="leading" secondItem="UXa-0b-6Vg" secondAttribute="leading" id="a3i-Z6-H6V"/>
+                            <constraint firstItem="AeK-83-w1d" firstAttribute="top" secondItem="7pm-NS-FbB" secondAttribute="bottom" id="zXa-ob-u7t"/>
+                            <constraint firstAttribute="trailing" secondItem="AeK-83-w1d" secondAttribute="trailing" id="zhy-6T-1jt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fm-24-UJI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633" y="687"/>
         </scene>
     </scenes>
 </document>
