@@ -12,21 +12,39 @@ import FirebaseStorage
 
 class MainProfileViewController: UIViewController {
     
-    
+    let ref = FIRDatabase.database().reference()
 
     //IBOutlet
+    
     @IBOutlet weak var profilePicture: UIImageView!
+    
+    
     @IBOutlet weak var postsCount: UILabel!
     @IBOutlet weak var followersCount: UILabel!
     @IBOutlet weak var followingCount: UILabel!
-    @IBOutlet weak var editProfileButton: UIButton!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var editProfileButton: UIButton!{
+        
+        didSet{
+            editProfileButton.addTarget(self, action: #selector(nextViewController), for: .touchUpInside)
+            
+        }
+        
+    }
     
+    func nextViewController() {
+        
+        //push to edit profile VC
+        
+    }
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     
     // viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
     }
 
