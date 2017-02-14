@@ -21,9 +21,13 @@
 		94B2E7151E51908A00C33528 /* EditProfileViewController(Extension).swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7141E51908A00C33528 /* EditProfileViewController(Extension).swift */; };
 		94B2E7171E51970800C33528 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7161E51970800C33528 /* UserDetail.swift */; };
 		94B2E7191E51A0E600C33528 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7181E51A0E600C33528 /* PostDetail.swift */; };
-
+		94B2E71E1E521D4000C33528 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E71C1E521D4000C33528 /* FollowerTableViewCell.swift */; };
+		94B2E71F1E521D4000C33528 /* FollowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B2E71D1E521D4000C33528 /* FollowerTableViewCell.xib */; };
+		94B2E7221E52200E00C33528 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7201E52200E00C33528 /* FollowingTableViewCell.swift */; };
+		94B2E7231E52200E00C33528 /* FollowingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B2E7211E52200E00C33528 /* FollowingTableViewCell.xib */; };
+		94B2E7291E52B24600C33528 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7281E52B24600C33528 /* FollowingViewController.swift */; };
+		94B2E72B1E52B2B600C33528 /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E72A1E52B2B600C33528 /* FollowerViewController.swift */; };
 		C058301F1E5153B800C8FDD0 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C058301E1E5153B800C8FDD0 /* TimelineViewController.swift */; };
-		C0BC48461E4DB9F2001DA1BD /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC48451E4DB9F2001DA1BD /* CreateAccountViewController.swift */; };
 		C0BC48461E4DB9F2001DA1BD /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC48451E4DB9F2001DA1BD /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,10 +47,15 @@
 		94B2E7141E51908A00C33528 /* EditProfileViewController(Extension).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditProfileViewController(Extension).swift"; sourceTree = "<group>"; };
 		94B2E7161E51970800C33528 /* UserDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		94B2E7181E51A0E600C33528 /* PostDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
+		94B2E71C1E521D4000C33528 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
+		94B2E71D1E521D4000C33528 /* FollowerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowerTableViewCell.xib; sourceTree = "<group>"; };
+		94B2E7201E52200E00C33528 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
+		94B2E7211E52200E00C33528 /* FollowingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingTableViewCell.xib; sourceTree = "<group>"; };
+		94B2E7281E52B24600C33528 /* FollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
+		94B2E72A1E52B2B600C33528 /* FollowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
 		A02FDD1C533191EA0540E3BF /* Pods-Insta.Gram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insta.Gram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insta.Gram/Pods-Insta.Gram.debug.xcconfig"; sourceTree = "<group>"; };
 		AD055100AF878245CB65DB95 /* Pods-Insta.Gram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insta.Gram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Insta.Gram/Pods-Insta.Gram.release.xcconfig"; sourceTree = "<group>"; };
 		C058301E1E5153B800C8FDD0 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
-		C0BC48451E4DB9F2001DA1BD /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		C0BC48451E4DB9F2001DA1BD /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		E03398B3C20053A6F879CA64 /* Pods_Insta_Gram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insta_Gram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,8 +103,6 @@
 			children = (
 				941732491E4DAF2300D90FBE /* AppDelegate.swift */,
 				C058301E1E5153B800C8FDD0 /* TimelineViewController.swift */,
-				9417324B1E4DAF2300D90FBE /* LoginViewController.swift */,
-				C0BC48451E4DB9F2001DA1BD /* CreateAccountViewController.swift */,
 				94B2E7111E51672400C33528 /* MainProfile */,
 				9417324B1E4DAF2300D90FBE /* LoginViewController.swift */,
 				C0BC48451E4DB9F2001DA1BD /* CreateAccountViewController.swift */,
@@ -114,12 +121,50 @@
 			children = (
 				94B2E70D1E51668C00C33528 /* MainProfile.storyboard */,
 				94B2E70F1E5166CC00C33528 /* MainProfileViewController.swift */,
+				94B2E7251E52A19A00C33528 /* Follower */,
+				94B2E7241E52A18F00C33528 /* Following */,
+				94B2E7261E52A1AB00C33528 /* EditProfile */,
+				94B2E7271E52A1BC00C33528 /* Class */,
+			);
+			name = MainProfile;
+			sourceTree = "<group>";
+		};
+		94B2E7241E52A18F00C33528 /* Following */ = {
+			isa = PBXGroup;
+			children = (
+				94B2E7201E52200E00C33528 /* FollowingTableViewCell.swift */,
+				94B2E7281E52B24600C33528 /* FollowingViewController.swift */,
+				94B2E7211E52200E00C33528 /* FollowingTableViewCell.xib */,
+			);
+			name = Following;
+			sourceTree = "<group>";
+		};
+		94B2E7251E52A19A00C33528 /* Follower */ = {
+			isa = PBXGroup;
+			children = (
+				94B2E71C1E521D4000C33528 /* FollowerTableViewCell.swift */,
+				94B2E72A1E52B2B600C33528 /* FollowerViewController.swift */,
+				94B2E71D1E521D4000C33528 /* FollowerTableViewCell.xib */,
+			);
+			name = Follower;
+			sourceTree = "<group>";
+		};
+		94B2E7261E52A1AB00C33528 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
 				94B2E7121E51727900C33528 /* EditProfileViewController.swift */,
 				94B2E7141E51908A00C33528 /* EditProfileViewController(Extension).swift */,
+			);
+			name = EditProfile;
+			sourceTree = "<group>";
+		};
+		94B2E7271E52A1BC00C33528 /* Class */ = {
+			isa = PBXGroup;
+			children = (
 				94B2E7161E51970800C33528 /* UserDetail.swift */,
 				94B2E7181E51A0E600C33528 /* PostDetail.swift */,
 			);
-			name = MainProfile;
+			name = Class;
 			sourceTree = "<group>";
 		};
 		A34D2DD9EBEEB83E6948CF9A /* Pods */ = {
@@ -194,9 +239,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B2E7231E52200E00C33528 /* FollowingTableViewCell.xib in Resources */,
 				941732571E4DAF2300D90FBE /* LaunchScreen.storyboard in Resources */,
 				94B2E70E1E51668C00C33528 /* MainProfile.storyboard in Resources */,
 				941732541E4DAF2300D90FBE /* Assets.xcassets in Resources */,
+				94B2E71F1E521D4000C33528 /* FollowerTableViewCell.xib in Resources */,
 				9417325F1E4DB3CC00D90FBE /* GoogleService-Info .plist in Resources */,
 				9417324F1E4DAF2300D90FBE /* Main.storyboard in Resources */,
 			);
@@ -259,10 +306,14 @@
 			files = (
 				C0BC48461E4DB9F2001DA1BD /* CreateAccountViewController.swift in Sources */,
 				94B2E7191E51A0E600C33528 /* PostDetail.swift in Sources */,
+				94B2E71E1E521D4000C33528 /* FollowerTableViewCell.swift in Sources */,
 				941732521E4DAF2300D90FBE /* Insta_Gram.xcdatamodeld in Sources */,
 				94B2E7131E51727900C33528 /* EditProfileViewController.swift in Sources */,
 				94B2E7101E5166CC00C33528 /* MainProfileViewController.swift in Sources */,
+				94B2E72B1E52B2B600C33528 /* FollowerViewController.swift in Sources */,
+				94B2E7291E52B24600C33528 /* FollowingViewController.swift in Sources */,
 				94B2E7151E51908A00C33528 /* EditProfileViewController(Extension).swift in Sources */,
+				94B2E7221E52200E00C33528 /* FollowingTableViewCell.swift in Sources */,
 				94B2E7171E51970800C33528 /* UserDetail.swift in Sources */,
 				9417324C1E4DAF2300D90FBE /* LoginViewController.swift in Sources */,
 				9417324A1E4DAF2300D90FBE /* AppDelegate.swift in Sources */,

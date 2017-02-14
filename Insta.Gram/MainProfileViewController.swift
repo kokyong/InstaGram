@@ -11,6 +11,8 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class MainProfileViewController: UIViewController {
+    
+    
 
     //IBOutlet
     @IBOutlet weak var profilePicture: UIImageView!

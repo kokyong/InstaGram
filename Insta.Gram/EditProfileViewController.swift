@@ -16,6 +16,7 @@ class EditProfileViewController: UIViewController {
     //IBOutlet
     
     @IBOutlet weak var profilePictureEdit: UIImageView!
+    
     @IBOutlet weak var changeProfilePictureButton: UIButton!{
         
         didSet{
@@ -29,6 +30,22 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var descriptionTF: UITextField!
+    
+    @IBOutlet weak var confirmEditButton: UIButton!{
+        
+        
+        didSet{
+            
+            confirmEditButton.addTarget(self, action: #selector(confirmEdit), for: .touchUpInside)
+            
+        }
+    }
+    
+    func confirmEdit() {
+        
+        
+        
+    }
     
     
     //viewDidLoad
