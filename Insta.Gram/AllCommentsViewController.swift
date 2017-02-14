@@ -44,7 +44,7 @@ class AllCommentsViewController: UIViewController, UITableViewDataSource, UITabl
 
         dbRef = FIRDatabase.database().reference()
 
-        observeComments()
+//        observeComments()
         
     }
 
@@ -70,7 +70,7 @@ class AllCommentsViewController: UIViewController, UITableViewDataSource, UITabl
         
         
         textCell.usernameLabel.text = comment.senderName
-        textCell.displayPictureImageView.image = comment.senderDisplayPicture
+//        textCell.displayPictureImageView.image = comment.senderDisplayPicture
         textCell.commentsLabel.text = comment.text
         textCell.timestampLabel.text = comment.timeAgo()
         
@@ -78,25 +78,25 @@ class AllCommentsViewController: UIViewController, UITableViewDataSource, UITabl
         return textCell    }
     
     //CurrentChannel Problem
-    func observeComments(){
-        guard
-            let channleId = currentChannel?.id
-            else { return }
-        
-        dbRef.child("channels").child(channleId).child("chats").observe(.childAdded, with: {(snapshot) in
-            
-            
-            //Get the chat and append chat
-            guard let value = snapshot.value as? [String: Any]
-                else {return}
-            let newChat = Chat(withDictionary: value)
-            self.appendComments(newChat)
-            
-            
-            
-            print(snapshot)
-        })
-    }
+//    func observeComments(){
+////        guard
+////            let channleId = currentChannel?.id
+////            else { return }
+//        
+////        dbRef.child("channels").child(channleId).child("chats").observe(.childAdded, with: {(snapshot) in
+//        
+//            
+//            //Get the chat and append chat
+//            guard let value = snapshot.value as? [String: Any]
+//                else {return}
+//            let newChat = Chat(withDictionary: value)
+//            self.appendComments(newChat)
+//            
+//            
+//            
+//            print(snapshot)
+//        })
+//    }
     
     
     func sendComments(){
@@ -120,10 +120,10 @@ class AllCommentsViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         //Blocker 1
-        guard
-            let channleId = currentChannel?.id ,
-            let chatIndex = currentChannel?.chats.count
-            else { return }
+//        guard
+////            let channleId = currentChannel?.id ,
+////            let chatIndex = currentChannel?.chats.count
+//            else { return }
         
         let timestamp = Date.timeIntervalSinceReferenceDate
         //        let userEmail = currentUserChatID
@@ -138,7 +138,7 @@ class AllCommentsViewController: UIViewController, UITableViewDataSource, UITabl
         
         
         //write dictionatry to firebase
-        dbRef.child("channels").child(channleId).child("chats").child(String(chatIndex)).setValue(chatDict)
+//        dbRef.child("channels").child(channleId).child("chats").child(String(chatIndex)).setValue(chatDict)
         
         commentsTextField.text = ""
         
