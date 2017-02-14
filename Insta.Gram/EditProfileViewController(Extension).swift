@@ -96,6 +96,12 @@ extension EditProfileViewController : UIImagePickerControllerDelegate, UINavigat
         }
     }
     
+    func hello() {
+        
+        
+        
+    }
+    
     
     
     

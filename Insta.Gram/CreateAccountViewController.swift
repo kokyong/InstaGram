@@ -7,29 +7,52 @@
 //
 
 import UIKit
+import Firebase
 
-class CreateAccountViewController: UIViewController {
+class CreateAccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    let picker = UIImagePickerController()
+    //Outlet
+    @IBOutlet weak var userImageView: UIImageView!
+  
+    @IBOutlet weak var userUsenameField: UITextField!
+    @IBOutlet weak var userEmailField: UITextField!
+    
+    @IBOutlet weak var userPasswordField: UITextField!
+    
+    //Action
+   
+    
+    @IBAction func userImagePressed(_ sender: UIButton) {
     }
-    */
-
+    @IBAction func userSignUpPress(_ sender: UIButton) {
+        
+        
+        guard let username = userUsenameField.text, let email = userEmailField.text, let password = userPasswordField.text else {return
+    }
+        
+        
+        FIRAuth.auth()?.createUser(withEmail: userEmailField.text!, password: userPasswordField.text!,  completion: { (user,error) in
+            
+            if error != nil{
+                print (error! as NSError)
+                return
+            }
+            
+            self.handleUser(user: user!)
+    })
+    }
+    func handleUser(user: FIRUser) {
+    print("User found :\(user.uid)")
+    }
+        
 }
+
+
+
+
+
+
+
+
