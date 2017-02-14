@@ -39,9 +39,10 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtr-dU-DWq">
                                 <rect key="frame" x="0.0" y="625" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" width="110" id="blb-Hp-Jdk"/>
-                                    <barButtonItem title="+" width="110" id="bnr-az-FMi"/>
-                                    <barButtonItem title="Item" width="110" id="Cew-qf-yj9"/>
+                                    <barButtonItem title="NewsF" width="75" id="blb-Hp-Jdk"/>
+                                    <barButtonItem title="+" width="75" id="bnr-az-FMi"/>
+                                    <barButtonItem title="Search" width="75" id="Cew-qf-yj9"/>
+                                    <barButtonItem title="Profile" width="75" id="HPE-ye-Ee3"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -56,7 +57,13 @@
                             <constraint firstItem="zu1-mH-qec" firstAttribute="leading" secondItem="0cW-nS-YfU" secondAttribute="leading" id="kHA-7l-A0l"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Uic-mE-y51"/>
+                    <navigationItem key="navigationItem" id="Uic-mE-y51">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="ssA-RJ-onH"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addPostButtonPressed" destination="jtr-dU-DWq" id="rT6-wH-NMq"/>
+                        <outlet property="timelineTableView" destination="zu1-mH-qec" id="0mV-sF-vrE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPD-gc-pe6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,6 +184,11 @@
                             <constraint firstAttribute="trailing" secondItem="y51-qW-eSK" secondAttribute="trailing" constant="10" id="wec-tO-oN5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="allCommentsTableView" destination="3eF-vQ-e9j" id="iym-Tb-daM"/>
+                        <outlet property="commentsTextField" destination="GJi-KS-O3M" id="w8q-MT-Jdb"/>
+                        <outlet property="sendButtonPressed" destination="y51-qW-eSK" id="jDt-AD-u3f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBZ-86-k8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
