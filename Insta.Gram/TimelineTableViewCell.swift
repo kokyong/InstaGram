@@ -38,9 +38,9 @@ class TimelineTableViewCell: UITableViewCell {
         didSet {
             
             let storyboard = UIStoryboard(name: "NewsFeed", bundle: Bundle.main)
-            guard let controller = storyboard?.instantiateViewController(withIdentifier: "AllCommentsViewController") as? AllCommentsViewController else {return}
-            
-            navigationController?.pushViewController(controller, animated: true)
+//            guard let controller = storyboard?.instantiateViewController(withIdentifier: "AllCommentsViewController") as? AllCommentsViewController else {return}
+//            
+//            navigationController?.pushViewController(controller, animated: true)
 
             
         }

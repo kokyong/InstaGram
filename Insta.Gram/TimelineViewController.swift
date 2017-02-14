@@ -33,12 +33,14 @@ extension TimelineViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TimelineTableViewCell.cellIdentifier, for: indexPath) as? TimelineTableViewCell
-            else {
-                return UITableViewCell()
-        }
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: TimelineTableViewCell.cellIdentifier, for: indexPath) as? TimelineTableViewCell
+//            else {
+//                return UITableViewCell()
+//        }
+//        
+//        return cell
         
-        return cell
+        return UITableViewCell()
     }
     
 }
