@@ -7,24 +7,96 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseDatabase
+import FirebaseAuth
 
 class TimelineViewController: UIViewController {
 
+    
+    
+    //Outlets
+    @IBOutlet weak var timelineTableView: UITableView! {
+        didSet {
+            
+        timelineTableView.dataSource = self
+            
+        }
+    }
+    
+    @IBOutlet weak var addPostButtonPressed: UIToolbar!{
+        
+        didSet{
+            
+//            imageButton.addTarget(self, action: #selector(displayImagePicker), for: .touchUpInside)
+//
+//            addPostButtonPressed.(self, action: #selector(displayImagePicker), for: .touchUpInside)
+            
+        }
+    }
+    
+    var posts : [PostDetail] = []
+    var following = [String]()
+    var dbRef : FIRDatabaseReference!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+//        dbRef = FIRDatabase.database().reference()
+//        
+//        dbRef.child("").queryOrderedByKey().observeSingleEvent(of: .value, with: { snapshot in
+//         
+//            let users = snapshot.value as! [String : AnyObject]
+//        
+//            for (_,value) in users {
+//                if let uid = value["uid"] as? String {
+//                    if uid == FIRAuth.auth()?.currentUser?.uid {
+//                        if let followingUsers = value ["following"] as? [String : String] {
+//                            for (_,user) in followingUsers {
+//                            self.following.append(user)
+//                                
+//                          }
+//                        }
+//                        self.following.append(FIRAuth.auth()!.currentUser!.uid)
+//                        
+//                        self.dbRef.child("").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
+//                            
+//                            let postsSnap = snap.value as! [String : AnyObject]
+//                            
+//                            for (_,post) in postsSnap {
+//                                if let userID = value["userID"] as? String {
+//                                    for each in self.following {
+//                                        if each == userID {
+//                                            let posst = PostDetail()
+//                                            if let username = post["username"] as? String, let likes = post ["likes"] as? Int,
+//                                            let pathToImage = post["pathToImage"] as? String,
+//                                            let postID =
+//                                            
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                        })
+//                    }
+//                }
+//            }
+//        })
+//
+//    
+}
+//    
+    func fetchPosts(){
+        
+        
     }
     
+ }
 
 
-}
 
+
+//EXTENSION
 extension TimelineViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,7 +105,7 @@ extension TimelineViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TimelineTableViewCell.cellIdentifier, for: indexPath) as? TimelineTableViewCell
+        guard let cell = timelineTableView.dequeueReusableCell(withIdentifier: TimelineTableViewCell.cellIdentifier, for: indexPath) as? TimelineTableViewCell
             else {
                 return UITableViewCell()
         }
@@ -42,3 +114,7 @@ extension TimelineViewController: UITableViewDataSource {
     }
     
 }
+
+
+
+
