@@ -38,7 +38,7 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
     }
 
 
-    func displayPicker {
+    func displayPicker() {
         
     }
 
