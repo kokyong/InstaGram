@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wkQ-E9-RdD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="hDr-5E-R5A">
             <objects>
-                <viewController id="Zhh-PI-Qyt" customClass="LoginViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Zhh-PI-Qyt" customClass="LoginViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P6E-T6-Bmp"/>
                         <viewControllerLayoutGuide type="bottom" id="A92-6n-eKg"/>
@@ -55,6 +55,9 @@
                                     <constraint firstAttribute="height" constant="30" id="tPy-Qo-iGp"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="createAnAccountButton:" destination="Zhh-PI-Qyt" eventType="touchUpInside" id="e0R-uP-6Rh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJj-xQ-EAH">
                                 <rect key="frame" x="166" y="408" width="42" height="30"/>
@@ -64,6 +67,10 @@
                                 </constraints>
                                 <state key="normal" title="Log In"/>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1Eb-8g-3Ky">
+                                <rect key="frame" x="177" y="327" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -81,6 +88,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="XSW-Tm-Ugv"/>
                     <connections>
+                        <outlet property="activityLoader" destination="1Eb-8g-3Ky" id="4H6-Wj-Q2Y"/>
                         <outlet property="userButton" destination="nJj-xQ-EAH" id="fY3-Lf-wI7"/>
                         <outlet property="userEmail" destination="wCw-hZ-QMQ" id="kfd-6o-KnF"/>
                         <outlet property="userImage" destination="8xX-Hq-CfO" id="Ole-7g-pcY"/>
@@ -94,7 +102,7 @@
         <!--Create Account View Controller-->
         <scene sceneID="aal-GY-2m6">
             <objects>
-                <viewController id="0vF-Xc-rjq" customClass="CreateAccountViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateAccountViewController" id="0vF-Xc-rjq" customClass="CreateAccountViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2gJ-wW-S2Z"/>
                         <viewControllerLayoutGuide type="bottom" id="cmZ-ao-XMe"/>
@@ -139,30 +147,36 @@
                                 <rect key="frame" x="139" y="204" width="96" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Picture"/>
-                                <connections>
-                                    <action selector="userImagePressed:" destination="0vF-Xc-rjq" eventType="touchUpInside" id="6ju-au-pQq"/>
-                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R0P-iX-s1S">
+                                <rect key="frame" x="67" y="68" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dh1-db-4YY">
+                                <rect key="frame" x="16" y="424" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46W-qm-fNA">
-                                <rect key="frame" x="154" y="484" width="67" height="30"/>
+                                <rect key="frame" x="154" y="541" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Complete"/>
                                 <connections>
                                     <action selector="userSignUpPress:" destination="0vF-Xc-rjq" eventType="touchUpInside" id="A5W-YH-Sld"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R0P-iX-s1S">
-                                <rect key="frame" x="67" y="68" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="userDescriptionField" destination="dh1-db-4YY" id="LHd-Ei-BGr"/>
                         <outlet property="userEmailField" destination="PuK-dx-5QI" id="Jwv-z2-qmf"/>
                         <outlet property="userImageView" destination="R0P-iX-s1S" id="eGz-ek-gm6"/>
                         <outlet property="userPasswordField" destination="03p-lN-idH" id="C14-wc-4ix"/>
-                        <outlet property="userUsenameField" destination="qYN-J1-MaN" id="W5d-gO-AnU"/>
+                        <outlet property="userSelectPicture" destination="8FK-SY-1XF" id="vZB-nR-wz0"/>
+                        <outlet property="userUsernameField" destination="qYN-J1-MaN" id="RqB-Qb-JnL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZL-KD-AgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,7 +186,7 @@
         <!--Navigation Controller-->
         <scene sceneID="idq-N5-SGj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wkQ-E9-RdD" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="wkQ-E9-RdD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iyu-Za-3go">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

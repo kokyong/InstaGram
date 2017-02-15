@@ -81,6 +81,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+extension AppDelegate {
+    
+    func displayLogin() {
+        
+        let storyboard = UIStoryboard(name: "Auth", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: "Navigation Controller")
+        window?.rootViewController = controller
+    }
+}
 
 extension AppDelegate {
     
