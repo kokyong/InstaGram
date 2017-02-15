@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		12C59A0B87297C3A93C5F56D /* Pods_Insta_Gram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03398B3C20053A6F879CA64 /* Pods_Insta_Gram.framework */; };
+		385B97311E52E0EB0005F13B /* publishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385B972D1E52E0EB0005F13B /* publishPostViewController.swift */; };
+		385B97321E52E0EB0005F13B /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385B972E1E52E0EB0005F13B /* TimelineTableViewCell.swift */; };
+		385B97331E52E0EB0005F13B /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385B972F1E52E0EB0005F13B /* TimelineTableViewCell.xib */; };
+		385B97361E52E62E0005F13B /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385B97351E52E62E0005F13B /* TimelineViewController.swift */; };
 		38EBB0F91E515F3D00D8A40F /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38EBB0F81E515F3D00D8A40F /* Auth.storyboard */; };
 		9417324A1E4DAF2300D90FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941732491E4DAF2300D90FBE /* AppDelegate.swift */; };
 		9417324C1E4DAF2300D90FBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9417324B1E4DAF2300D90FBE /* LoginViewController.swift */; };
@@ -23,13 +27,19 @@
 		94B2E7171E51970800C33528 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7161E51970800C33528 /* UserDetail.swift */; };
 		94B2E7191E51A0E600C33528 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7181E51A0E600C33528 /* PostDetail.swift */; };
 		94B2E71E1E521D4000C33528 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E71C1E521D4000C33528 /* FollowerTableViewCell.swift */; };
+		94B2E71F1E521D4000C33528 /* FollowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B2E71D1E521D4000C33528 /* FollowerTableViewCell.xib */; };
 		94B2E7221E52200E00C33528 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7201E52200E00C33528 /* FollowingTableViewCell.swift */; };
 		94B2E7231E52200E00C33528 /* FollowingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B2E7211E52200E00C33528 /* FollowingTableViewCell.xib */; };
 		94B2E7291E52B24600C33528 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7281E52B24600C33528 /* FollowingViewController.swift */; };
 		94B2E72B1E52B2B600C33528 /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E72A1E52B2B600C33528 /* FollowerViewController.swift */; };
+		94B2E7311E52FDE100C33528 /* AllCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E72C1E52FDE100C33528 /* AllCommentsViewController.swift */; };
 		94B2E7321E52FDE100C33528 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B2E72D1E52FDE100C33528 /* NewsFeed.storyboard */; };
+		94B2E7331E52FDE100C33528 /* publishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E72E1E52FDE100C33528 /* publishPostViewController.swift */; };
+		94B2E7341E52FDE100C33528 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E72F1E52FDE100C33528 /* TimelineTableViewCell.swift */; };
+		94B2E7351E52FDE100C33528 /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B2E7301E52FDE100C33528 /* TimelineTableViewCell.xib */; };
 		C01F0A201E51651300451A60 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C01F0A1F1E51651300451A60 /* NewsFeed.storyboard */; };
 		C01F0A231E5166A200451A60 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F0A211E5166A200451A60 /* TimelineTableViewCell.swift */; };
+		C01F0A241E5166A200451A60 /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01F0A221E5166A200451A60 /* TimelineTableViewCell.xib */; };
 		C01F0A271E51929E00451A60 /* publishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F0A261E51929E00451A60 /* publishPostViewController.swift */; };
 		C01F0A2B1E51A33B00451A60 /* AllCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F0A2A1E51A33B00451A60 /* AllCommentsViewController.swift */; };
 		C058301F1E5153B800C8FDD0 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C058301E1E5153B800C8FDD0 /* TimelineViewController.swift */; };
@@ -40,6 +50,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		385B972D1E52E0EB0005F13B /* publishPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = publishPostViewController.swift; sourceTree = "<group>"; };
+		385B972E1E52E0EB0005F13B /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
+		385B972F1E52E0EB0005F13B /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
+		385B97351E52E62E0005F13B /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		38EBB0F81E515F3D00D8A40F /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		941732461E4DAF2300D90FBE /* Insta.Gram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insta.Gram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		941732491E4DAF2300D90FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +76,11 @@
 		94B2E7211E52200E00C33528 /* FollowingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingTableViewCell.xib; sourceTree = "<group>"; };
 		94B2E7281E52B24600C33528 /* FollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
 		94B2E72A1E52B2B600C33528 /* FollowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
+		94B2E72C1E52FDE100C33528 /* AllCommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCommentsViewController.swift; sourceTree = "<group>"; };
 		94B2E72D1E52FDE100C33528 /* NewsFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsFeed.storyboard; sourceTree = "<group>"; };
+		94B2E72E1E52FDE100C33528 /* publishPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = publishPostViewController.swift; sourceTree = "<group>"; };
+		94B2E72F1E52FDE100C33528 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
+		94B2E7301E52FDE100C33528 /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
 		A02FDD1C533191EA0540E3BF /* Pods-Insta.Gram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insta.Gram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insta.Gram/Pods-Insta.Gram.debug.xcconfig"; sourceTree = "<group>"; };
 		AD055100AF878245CB65DB95 /* Pods-Insta.Gram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insta.Gram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Insta.Gram/Pods-Insta.Gram.release.xcconfig"; sourceTree = "<group>"; };
 		C01F0A1F1E51651300451A60 /* NewsFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsFeed.storyboard; sourceTree = "<group>"; };
@@ -124,12 +142,18 @@
 				C01F0A251E5166B100451A60 /* Timeline */,
 				94B2E7111E51672400C33528 /* MainProfile */,
 				9417324B1E4DAF2300D90FBE /* LoginViewController.swift */,
+				94B2E7111E51672400C33528 /* MainProfile */,
+				9417324B1E4DAF2300D90FBE /* LoginViewController.swift */,
 				C0BC48451E4DB9F2001DA1BD /* CreateAccountViewController.swift */,
 				38EBB0F81E515F3D00D8A40F /* Auth.storyboard */,
 				9417324D1E4DAF2300D90FBE /* Main.storyboard */,
 				941732531E4DAF2300D90FBE /* Assets.xcassets */,
 				941732551E4DAF2300D90FBE /* LaunchScreen.storyboard */,
+				94B2E72C1E52FDE100C33528 /* AllCommentsViewController.swift */,
 				94B2E72D1E52FDE100C33528 /* NewsFeed.storyboard */,
+				94B2E72E1E52FDE100C33528 /* publishPostViewController.swift */,
+				94B2E72F1E52FDE100C33528 /* TimelineTableViewCell.swift */,
+				94B2E7301E52FDE100C33528 /* TimelineTableViewCell.xib */,
 				941732581E4DAF2300D90FBE /* Info.plist */,
 				941732501E4DAF2300D90FBE /* Insta_Gram.xcdatamodeld */,
 				9417325E1E4DB3CC00D90FBE /* GoogleService-Info.plist */,
@@ -140,6 +164,10 @@
 		94B2E7111E51672400C33528 /* MainProfile */ = {
 			isa = PBXGroup;
 			children = (
+				385B97351E52E62E0005F13B /* TimelineViewController.swift */,
+				385B972D1E52E0EB0005F13B /* publishPostViewController.swift */,
+				385B972E1E52E0EB0005F13B /* TimelineTableViewCell.swift */,
+				385B972F1E52E0EB0005F13B /* TimelineTableViewCell.xib */,
 				94B2E70D1E51668C00C33528 /* MainProfile.storyboard */,
 				94B2E70F1E5166CC00C33528 /* MainProfileViewController.swift */,
 				94B2E7251E52A19A00C33528 /* Follower */,
@@ -282,6 +310,11 @@
 				94B2E70E1E51668C00C33528 /* MainProfile.storyboard in Resources */,
 				94B2E7321E52FDE100C33528 /* NewsFeed.storyboard in Resources */,
 				941732541E4DAF2300D90FBE /* Assets.xcassets in Resources */,
+				94B2E71F1E521D4000C33528 /* FollowerTableViewCell.xib in Resources */,
+				9417325F1E4DB3CC00D90FBE /* GoogleService-Info .plist in Resources */,
+				94B2E7351E52FDE100C33528 /* TimelineTableViewCell.xib in Resources */,
+				C01F0A241E5166A200451A60 /* TimelineTableViewCell.xib in Resources */,
+				385B97331E52E0EB0005F13B /* TimelineTableViewCell.xib in Resources */,
 				9417325F1E4DB3CC00D90FBE /* GoogleService-Info.plist in Resources */,
 				9417324F1E4DAF2300D90FBE /* Main.storyboard in Resources */,
 				38EBB0F91E515F3D00D8A40F /* Auth.storyboard in Resources */,
@@ -343,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B2E7311E52FDE100C33528 /* AllCommentsViewController.swift in Sources */,
 				C01F0A2B1E51A33B00451A60 /* AllCommentsViewController.swift in Sources */,
 				C0BC48461E4DB9F2001DA1BD /* CreateAccountViewController.swift in Sources */,
 				94B2E7191E51A0E600C33528 /* PostDetail.swift in Sources */,
@@ -350,6 +384,9 @@
 				941732521E4DAF2300D90FBE /* Insta_Gram.xcdatamodeld in Sources */,
 				C01F0A271E51929E00451A60 /* publishPostViewController.swift in Sources */,
 				94B2E7131E51727900C33528 /* EditProfileViewController.swift in Sources */,
+				94B2E7331E52FDE100C33528 /* publishPostViewController.swift in Sources */,
+				385B97321E52E0EB0005F13B /* TimelineTableViewCell.swift in Sources */,
+				385B97361E52E62E0005F13B /* TimelineViewController.swift in Sources */,
 				94B2E7101E5166CC00C33528 /* MainProfileViewController.swift in Sources */,
 				94B2E72B1E52B2B600C33528 /* FollowerViewController.swift in Sources */,
 				94B2E7291E52B24600C33528 /* FollowingViewController.swift in Sources */,
@@ -357,11 +394,13 @@
 				94B2E7221E52200E00C33528 /* FollowingTableViewCell.swift in Sources */,
 				94B2E7171E51970800C33528 /* UserDetail.swift in Sources */,
 				9417324C1E4DAF2300D90FBE /* LoginViewController.swift in Sources */,
+				94B2E7341E52FDE100C33528 /* TimelineTableViewCell.swift in Sources */,
 				9417324A1E4DAF2300D90FBE /* AppDelegate.swift in Sources */,
 				C0E401B61E52C385009ECF1B /* Comments.swift in Sources */,
 				C0E401B11E52BDD1009ECF1B /* CommentsTableViewCell.swift in Sources */,
 				C01F0A231E5166A200451A60 /* TimelineTableViewCell.swift in Sources */,
 				C058301F1E5153B800C8FDD0 /* TimelineViewController.swift in Sources */,
+				385B97311E52E0EB0005F13B /* publishPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
