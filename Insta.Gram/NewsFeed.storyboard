@@ -122,6 +122,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraButtonPressed" destination="psI-WC-S4h" id="Knd-Fv-pMV"/>
                         <outlet property="galleryButtonPressed" destination="uh8-mc-nCj" id="63C-FV-trn"/>
                         <outlet property="previewImage" destination="IS2-OM-r1T" id="tHv-Rw-Kr1"/>
                         <outlet property="writeCaption" destination="reJ-TM-82T" id="Kia-iu-DBB"/>

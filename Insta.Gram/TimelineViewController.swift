@@ -43,13 +43,19 @@ class TimelineViewController: UIViewController {
     
     
     
+    
+    
     var posts : [PostDetail] = []
     var following = [String]()
     var dbRef : FIRDatabaseReference!
 
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timelineTableView.register(TimelineTableViewCell.cellNib, forCellReuseIdentifier: TimelineTableViewCell.cellIdentifier)
+        
 
 //        dbRef = FIRDatabase.database().reference()
 //        
@@ -103,10 +109,6 @@ class TimelineViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    func fetchPosts(){
-        
-        
-    }
     
  }
 

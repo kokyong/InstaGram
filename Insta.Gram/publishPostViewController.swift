@@ -15,6 +15,10 @@ import Photos
 class publishPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     var imageArray: [UIImage] = []
+    var displayNameInPost: String?
+    var displayPictureInPost: String?
+    var picker = UIImagePickerController()
+
 
     @IBOutlet weak var previewImage: UIImageView!
     
@@ -22,14 +26,21 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var galleryButtonPressed: UIButton!{
         didSet{
-            galleryButtonPressed.addTarget(self, action: #selector(displayImagePicker), for: .touchUpInside)
+            galleryButtonPressed.addTarget(self, action: #selector(displayImagePickerGallery), for: .touchUpInside)
 
+        }
+    }
+    
+    
+    @IBOutlet weak var cameraButtonPressed: UIButton!{
+        didSet{
+            cameraButtonPressed.addTarget(self, action: #selector(displayImagePickerCamera), for: .touchUpInside)
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             self.previewImage.image = image
             self.dismiss(animated: true, completion: nil)
 
@@ -41,7 +52,6 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
 
      
     
-    var picker = UIImagePickerController()
     
     
     
@@ -54,7 +64,32 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
             , action: #selector(postButtonPressed))
         navigationItem.rightBarButtonItem = editButtonItem
         
-//        self.navigationController?.isNavigationBarHidden = true
+        
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            
+            let value = snapshot.value as? NSDictionary
+            let displayName = value?["username"] as? String ?? ""
+            
+            
+            self.displayNameInPost = displayName
+            dump(displayName)
+            
+            
+                    })
+        
+        
+        FIRDatabase.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            
+            let value = snapshot.value as? NSDictionary
+            let displayPicture = value?["profileURL"] as? String ?? ""
+            
+            
+            self.displayPictureInPost = displayPicture
+            dump(displayPicture)
+        })
 
      
     }
@@ -95,7 +130,8 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
                     let feed = ["userID" : uid,
                                 "pathToImage" : url.absoluteString,
                                 "likes" : 0,
-                                "username" : FIRAuth.auth()!.currentUser?.displayName!,
+                                "username" : self.displayNameInPost,
+                                "userDisplayPicture": self.displayPictureInPost  ,
                                 "caption" : self.writeCaption.text,
                                 "postID" : idForPost] as [String : Any]
                     
@@ -112,9 +148,9 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
     }
 
 
-    func displayImagePicker(){
+    func displayImagePickerGallery(){
         
-        picker.isEditing = true
+        picker.allowsEditing = true
         picker.sourceType = .photoLibrary
         
 
@@ -123,74 +159,14 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
         picker.delegate = self
     }
     
-    
-    func grabPhotos() {
+    func displayImagePickerCamera() {
         
-        let imgManager = PHImageManager.default()
-        
-        let requestOptions = PHImageRequestOptions()
-        requestOptions.isSynchronous = true
-        requestOptions.deliveryMode = .highQualityFormat
-        
-        let fetchOption = PHFetchOptions()
-        fetchOption.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
-        
-        if let fetchResult : PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOption) {
-            
-            if fetchResult.count > 0 {
-                for i in 0..<fetchResult.count{
-                    
-                    imgManager.requestImage(for: fetchResult.object(at: i) as! PHAsset , targetSize: .init(width: 200, height: 200), contentMode: .aspectFit, options: requestOptions, resultHandler: {
-                        image, eror in
-                        
-                        self.imageArray.append(image!)
-                    })
-                    
-                }
-                
-            }
-            else{
-                print ("No Photo Detected")
-            }
-            
-            
-        }
-        
+        picker.sourceType = .camera
+        self.present(picker, animated: true, completion: nil)
+        picker.delegate = self
     }
     
     
-    //Upload image to Firebase
-//    func uploadImage(image :UIImage) {
-//        
-//        let storageRef = FIRStorage.storage().reference()
-//        let metadata = FIRStorageMetadata()
-//        metadata.contentType = "image/jpeg"
-//        
-//        let timeStamp = Date.timeIntervalSinceReferenceDate
-//        let a = ("\(timeStamp)")
-//        let dataBaseChild = a.replacingOccurrences(of: ".", with: "")
-//        
-//        //create Data
-//        guard let imageData = UIImageJPEGRepresentation(image, 0.8) else {return}
-//        storageRef.child("\(dataBaseChild)").put(imageData, metadata: metadata) {
-//            (meta,error) in
-//            
-//            self.dismiss(animated: true, completion: nil)
-//            
-//            if error != nil {
-//                return
-//            }
-//            
-//            if let downloadURL = meta?.downloadURL()?.absoluteString {
-//                //                self.sendImageMessageWithUrl(imageUrl1: downloadURL)
-//                //save to database
-//            }else{
-//                //display error
-//                
-//            }
-//        }
-//        
-//    }
 
 
 }
