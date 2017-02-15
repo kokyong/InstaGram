@@ -16,8 +16,8 @@ class TimelineTableViewCell: UITableViewCell {
     }
     
     
-    static let cellIdentifier = "ChannelCell"
-    static let cellNib = UINib(nibName: "ChannelCell", bundle: Bundle.main)
+    static let cellIdentifier = "TimelineTableViewCell"
+    static let cellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle.main)
 
     //Outlets
     @IBOutlet weak var displayPictureImageView: UIImageView!

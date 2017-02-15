@@ -24,19 +24,24 @@ class TimelineViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var addPostButtonPressed: UIToolbar!{
+    @IBOutlet weak var addPostButtonPressed: UIBarButtonItem!{
         
         didSet{
             
-            let storyboard = UIStoryboard(name: "NewsFeed", bundle: Bundle.main)
-            guard let controller = storyboard.instantiateViewController(withIdentifier: "publishPostViewController") as? publishPostViewController else {return}
+            addPostButtonPressed.action = #selector(pushToPostImage)
+            
+        addPostButtonPressed.target = self
             
             
-            navigationController?.pushViewController(controller, animated: true)
+//            imageButton.addTarget(self, action: #selector(displayImagePicker), for: .touchUpInside)
+
+
             
         
         }
     }
+    
+    
     
     var posts : [PostDetail] = []
     var following = [String]()
@@ -89,6 +94,15 @@ class TimelineViewController: UIViewController {
 //    
 }
 //    
+    
+    func pushToPostImage() {
+        let storyboard = UIStoryboard(name: "NewsFeed", bundle: Bundle.main)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "publishPostViewController") as? publishPostViewController else {return}
+        
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func fetchPosts(){
         
         

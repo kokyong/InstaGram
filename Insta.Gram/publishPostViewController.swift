@@ -9,9 +9,12 @@
 import UIKit
 import FirebaseStorage
 import Firebase
+import Photos
 
 
 class publishPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    var imageArray: [UIImage] = []
 
     @IBOutlet weak var previewImage: UIImageView!
     
@@ -24,19 +27,63 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
-    @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.previewImage.image = image
+            self.dismiss(animated: true, completion: nil)
+
+                    }
+        else{print("asdsad")}
+            
+            }
+    
+
+     
+    
+    var picker = UIImagePickerController()
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        picker.delegate = self
+        
+        let editButtonItem = UIBarButtonItem.init(title: "Post", style: .done, target: self
+            , action: #selector(postButtonPressed))
+        navigationItem.rightBarButtonItem = editButtonItem
+        
+//        self.navigationController?.isNavigationBarHidden = true
+
+     
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+//        self.navigationController?.isNavigationBarHidden = true
+
+    }
+
+
+    func postButtonPressed (){
+        
         AppDelegate.instance().showActivityIndicator()
         
-        let uid = FIRAuth.auth()!.currentUser!.uid
+        let uid = FIRAuth.auth()?.currentUser?.uid
         let ref = FIRDatabase.database().reference()
-        let storage = FIRStorage.storage().reference(forURL: "https://instagram-6de25.firebaseio.com/")
+        let storage = FIRStorage.storage().reference()
+        let metadata = FIRStorageMetadata()
+        
         
         let idForPost = ref.child("posts").childByAutoId().key
-        let imageRef = storage.child("posts").child(uid).child("\(idForPost).jpg")
+        let imageRef = storage.child("posts").child(uid!).child("\(idForPost).jpg")
+        
         
         let data = UIImageJPEGRepresentation(self.previewImage.image!, 0.6)
         
-        let uploadTask = imageRef.put(data!, metadata: nil){(metadata, error)in
+        let uploadTask = imageRef.put(data!, metadata: metadata){(metadata, error)in
             if error != nil {
                 print(error!.localizedDescription)
                 AppDelegate.instance().dismissActivityIndicator()
@@ -49,7 +96,8 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
                                 "pathToImage" : url.absoluteString,
                                 "likes" : 0,
                                 "username" : FIRAuth.auth()!.currentUser?.displayName!,
-                    "postID" : idForPost] as [String : Any]
+                                "caption" : self.writeCaption.text,
+                                "postID" : idForPost] as [String : Any]
                     
                     let postFeed = ["\(idForPost)" : feed]
                     
@@ -62,31 +110,6 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
         
         uploadTask.resume()
     }
-    
-     
-    
-    var picker = UIImagePickerController()
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        picker.delegate = self
-        
-        // Do any additional setup after loading the view.
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            self.previewImage.image = image
-            
-        }
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-
-
 
 
     func displayImagePicker(){
@@ -97,11 +120,43 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
 
         self.present(picker, animated: true, completion: nil)
         
+        picker.delegate = self
     }
     
     
-    
-    
+    func grabPhotos() {
+        
+        let imgManager = PHImageManager.default()
+        
+        let requestOptions = PHImageRequestOptions()
+        requestOptions.isSynchronous = true
+        requestOptions.deliveryMode = .highQualityFormat
+        
+        let fetchOption = PHFetchOptions()
+        fetchOption.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        
+        if let fetchResult : PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOption) {
+            
+            if fetchResult.count > 0 {
+                for i in 0..<fetchResult.count{
+                    
+                    imgManager.requestImage(for: fetchResult.object(at: i) as! PHAsset , targetSize: .init(width: 200, height: 200), contentMode: .aspectFit, options: requestOptions, resultHandler: {
+                        image, eror in
+                        
+                        self.imageArray.append(image!)
+                    })
+                    
+                }
+                
+            }
+            else{
+                print ("No Photo Detected")
+            }
+            
+            
+        }
+        
+    }
     
     
     //Upload image to Firebase
