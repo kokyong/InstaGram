@@ -24,38 +24,24 @@ class TimelineViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var addPostButtonPressed: UIBarButtonItem!{
+    @IBOutlet weak var addPostButtonPressed: UIToolbar!{
         
         didSet{
             
-            addPostButtonPressed.action = #selector(pushToPostImage)
-            
-        addPostButtonPressed.target = self
-            
-            
 //            imageButton.addTarget(self, action: #selector(displayImagePicker), for: .touchUpInside)
-
-
+//
+//            addPostButtonPressed.(self, action: #selector(displayImagePicker), for: .touchUpInside)
             
-        
         }
     }
-    
-    
-    
-    
     
     var posts : [PostDetail] = []
     var following = [String]()
     var dbRef : FIRDatabaseReference!
 
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        timelineTableView.register(TimelineTableViewCell.cellNib, forCellReuseIdentifier: TimelineTableViewCell.cellIdentifier)
-        
 
 //        dbRef = FIRDatabase.database().reference()
 //        
@@ -100,15 +86,10 @@ class TimelineViewController: UIViewController {
 //    
 }
 //    
-    
-    func pushToPostImage() {
-        let storyboard = UIStoryboard(name: "NewsFeed", bundle: Bundle.main)
-        guard let controller = storyboard.instantiateViewController(withIdentifier: "publishPostViewController") as? publishPostViewController else {return}
+    func fetchPosts(){
         
         
-        navigationController?.pushViewController(controller, animated: true)
     }
-    
     
  }
 

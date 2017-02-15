@@ -30,9 +30,12 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    @IBOutlet weak var activityLoader: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     /// Login Function
@@ -47,6 +50,14 @@ class LoginViewController: UIViewController {
             
       
         })
+        func webViewDidStartLoad(_ webView: UIWebView) {
+            self.activityLoader.startAnimating()
+        }
+        func webViewDidFinishLoad(_ webView: UIWebView) {
+            self.activityLoader.stopAnimating()
+            
+        }
+
     }
     
 }
