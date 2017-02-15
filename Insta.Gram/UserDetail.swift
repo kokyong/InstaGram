@@ -14,11 +14,14 @@ class UserDetail {
     var userName : String?
     var profilePicture : URL?
     var userID : String?
+    var userDescription : String?
     
     init(withDictionary dictionary: [String:Any]) {
         
         userName = dictionary["userName"] as? String
         userID = dictionary["userID"] as? String
+        userDescription = dictionary["userDescription"] as? String
+
         
         if let pictureURL = dictionary["profilePicture"] as? String {
             
