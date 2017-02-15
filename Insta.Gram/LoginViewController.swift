@@ -30,9 +30,12 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    @IBOutlet weak var activityLoader: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     /// Login Function
@@ -45,8 +48,18 @@ class LoginViewController: UIViewController {
                 return
             }
             
+            guard let controller = UIStoryboard(name: "NewsFeed", bundle: Bundle.main).instantiateViewController(withIdentifier: "TimelineViewController") as?  TimelineViewController else { return }
+            self.navigationController? .pushViewController(controller, animated: true)
       
         })
+        func webViewDidStartLoad(_ webView: UIWebView) {
+            self.activityLoader.startAnimating()
+        }
+        func webViewDidFinishLoad(_ webView: UIWebView) {
+            self.activityLoader.stopAnimating()
+            
+        }
+
     }
     
 }

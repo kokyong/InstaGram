@@ -27,6 +27,10 @@
 		94B2E7231E52200E00C33528 /* FollowingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B2E7211E52200E00C33528 /* FollowingTableViewCell.xib */; };
 		94B2E7291E52B24600C33528 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7281E52B24600C33528 /* FollowingViewController.swift */; };
 		94B2E72B1E52B2B600C33528 /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E72A1E52B2B600C33528 /* FollowerViewController.swift */; };
+<<<<<<< HEAD
+=======
+		94B2E7321E52FDE100C33528 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B2E72D1E52FDE100C33528 /* NewsFeed.storyboard */; };
+>>>>>>> fee240281b00e3a00bba3b471e2245fed1c4ad3b
 		C01F0A201E51651300451A60 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C01F0A1F1E51651300451A60 /* NewsFeed.storyboard */; };
 		C01F0A231E5166A200451A60 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F0A211E5166A200451A60 /* TimelineTableViewCell.swift */; };
 		C01F0A271E51929E00451A60 /* publishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F0A261E51929E00451A60 /* publishPostViewController.swift */; };
@@ -61,6 +65,10 @@
 		94B2E7211E52200E00C33528 /* FollowingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingTableViewCell.xib; sourceTree = "<group>"; };
 		94B2E7281E52B24600C33528 /* FollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
 		94B2E72A1E52B2B600C33528 /* FollowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		94B2E72D1E52FDE100C33528 /* NewsFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsFeed.storyboard; sourceTree = "<group>"; };
+>>>>>>> fee240281b00e3a00bba3b471e2245fed1c4ad3b
 		A02FDD1C533191EA0540E3BF /* Pods-Insta.Gram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insta.Gram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insta.Gram/Pods-Insta.Gram.debug.xcconfig"; sourceTree = "<group>"; };
 		AD055100AF878245CB65DB95 /* Pods-Insta.Gram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insta.Gram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Insta.Gram/Pods-Insta.Gram.release.xcconfig"; sourceTree = "<group>"; };
 		C01F0A1F1E51651300451A60 /* NewsFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsFeed.storyboard; sourceTree = "<group>"; };
@@ -127,6 +135,10 @@
 				9417324D1E4DAF2300D90FBE /* Main.storyboard */,
 				941732531E4DAF2300D90FBE /* Assets.xcassets */,
 				941732551E4DAF2300D90FBE /* LaunchScreen.storyboard */,
+<<<<<<< HEAD
+=======
+				94B2E72D1E52FDE100C33528 /* NewsFeed.storyboard */,
+>>>>>>> fee240281b00e3a00bba3b471e2245fed1c4ad3b
 				941732581E4DAF2300D90FBE /* Info.plist */,
 				941732501E4DAF2300D90FBE /* Insta_Gram.xcdatamodeld */,
 				9417325E1E4DB3CC00D90FBE /* GoogleService-Info.plist */,
@@ -278,9 +290,13 @@
 				C0E401B21E52BDD1009ECF1B /* CommentsTableViewCell.xib in Resources */,
 				94B2E70E1E51668C00C33528 /* MainProfile.storyboard in Resources */,
 				941732541E4DAF2300D90FBE /* Assets.xcassets in Resources */,
+<<<<<<< HEAD
 				94B2E71F1E521D4000C33528 /* FollowerTableViewCell.xib in Resources */,
 				9417325F1E4DB3CC00D90FBE /* GoogleService-Info.plist in Resources */,
 				C01F0A241E5166A200451A60 /* TimelineTableViewCell.xib in Resources */,
+=======
+				9417325F1E4DB3CC00D90FBE /* GoogleService-Info.plist in Resources */,
+>>>>>>> fee240281b00e3a00bba3b471e2245fed1c4ad3b
 				9417324F1E4DAF2300D90FBE /* Main.storyboard in Resources */,
 				38EBB0F91E515F3D00D8A40F /* Auth.storyboard in Resources */,
 			);

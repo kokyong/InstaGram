@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Timeline View Controller-->
         <scene sceneID="Txg-OK-s9H">
             <objects>
-                <viewController id="HcB-uA-67A" customClass="TimelineViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimelineViewController" id="HcB-uA-67A" customClass="TimelineViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bvd-Ft-MJJ"/>
                         <viewControllerLayoutGuide type="bottom" id="jB3-kp-IpB"/>
@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zfh-pn-lPp" id="yQD-gD-gcI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -61,7 +61,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" id="ssA-RJ-onH"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="addPostButtonPressed" destination="jtr-dU-DWq" id="rT6-wH-NMq"/>
+                        <outlet property="addPostButtonPressed" destination="bnr-az-FMi" id="5gs-oK-LAs"/>
                         <outlet property="timelineTableView" destination="zu1-mH-qec" id="0mV-sF-vrE"/>
                     </connections>
                 </viewController>
@@ -72,7 +72,7 @@
         <!--Publish Post View Controller-->
         <scene sceneID="nPG-s5-e6A">
             <objects>
-                <viewController id="gUq-Nz-Jia" customClass="publishPostViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="publishPostViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gUq-Nz-Jia" customClass="publishPostViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mcH-qY-xeE"/>
                         <viewControllerLayoutGuide type="bottom" id="B2L-dK-GyN"/>
@@ -91,26 +91,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yxq-B3-96u">
-                                <rect key="frame" x="0.0" y="-4" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="New Post" id="Wyb-2N-Dee">
-                                        <barButtonItem key="rightBarButtonItem" title="Post" id="Rb1-Tb-jad"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IS2-OM-r1T">
-                                <rect key="frame" x="8" y="80" width="359" height="339"/>
+                                <rect key="frame" x="8" y="64" width="359" height="355"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdL-rd-Cfz">
-                                <rect key="frame" x="136" y="44" width="102" height="32"/>
+                                <rect key="frame" x="136" y="30" width="102" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psI-WC-S4h">
-                                        <rect key="frame" x="0.0" y="0.0" width="54" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="54" height="30"/>
                                         <state key="normal" title="Camera"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh8-mc-nCj">
-                                        <rect key="frame" x="54" y="0.0" width="48" height="32"/>
+                                        <rect key="frame" x="54" y="0.0" width="48" height="30"/>
                                         <state key="normal" title="Gallery"/>
                                     </button>
                                 </subviews>
@@ -118,23 +110,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="kdL-rd-Cfz" firstAttribute="top" secondItem="mcH-qY-xeE" secondAttribute="bottom" constant="10" id="2FK-H3-ew9"/>
                             <constraint firstAttribute="bottom" secondItem="reJ-TM-82T" secondAttribute="bottom" constant="20" symbolic="YES" id="9Yc-no-3fV"/>
                             <constraint firstItem="IS2-OM-r1T" firstAttribute="leading" secondItem="n3O-mN-tw6" secondAttribute="leading" constant="8" id="9oB-rq-1Yd"/>
                             <constraint firstItem="reJ-TM-82T" firstAttribute="top" secondItem="IS2-OM-r1T" secondAttribute="bottom" constant="8" id="ALI-Or-nI5"/>
-                            <constraint firstItem="IS2-OM-r1T" firstAttribute="top" secondItem="Yxq-B3-96u" secondAttribute="bottom" constant="40" id="E1C-4Q-PPa"/>
                             <constraint firstItem="IS2-OM-r1T" firstAttribute="top" secondItem="kdL-rd-Cfz" secondAttribute="bottom" constant="4" id="NUn-Xf-10Y"/>
                             <constraint firstAttribute="trailing" secondItem="IS2-OM-r1T" secondAttribute="trailing" constant="8" id="Qn4-J8-Y4Q"/>
-                            <constraint firstItem="Yxq-B3-96u" firstAttribute="leading" secondItem="n3O-mN-tw6" secondAttribute="leading" id="RNv-iC-O9S"/>
-                            <constraint firstItem="Yxq-B3-96u" firstAttribute="centerX" secondItem="IS2-OM-r1T" secondAttribute="centerX" id="aIT-OP-1G9"/>
                             <constraint firstItem="reJ-TM-82T" firstAttribute="trailing" secondItem="IS2-OM-r1T" secondAttribute="trailing" id="gz6-aN-7jU"/>
                             <constraint firstItem="kdL-rd-Cfz" firstAttribute="centerX" secondItem="n3O-mN-tw6" secondAttribute="centerX" id="jIy-lM-rF9"/>
                             <constraint firstItem="reJ-TM-82T" firstAttribute="leading" secondItem="IS2-OM-r1T" secondAttribute="leading" id="ngP-gf-Dvd"/>
-                            <constraint firstItem="kdL-rd-Cfz" firstAttribute="top" secondItem="Yxq-B3-96u" secondAttribute="bottom" constant="4" id="vqm-L9-xAi"/>
-                            <constraint firstItem="Yxq-B3-96u" firstAttribute="top" secondItem="n3O-mN-tw6" secondAttribute="topMargin" constant="-4" id="xci-en-aFw"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="postBarButtonPressed" destination="Rb1-Tb-jad" id="Wj0-q7-UUK"/>
+                        <outlet property="cameraButtonPressed" destination="psI-WC-S4h" id="Knd-Fv-pMV"/>
+                        <outlet property="galleryButtonPressed" destination="uh8-mc-nCj" id="63C-FV-trn"/>
                         <outlet property="previewImage" destination="IS2-OM-r1T" id="tHv-Rw-Kr1"/>
                         <outlet property="writeCaption" destination="reJ-TM-82T" id="Kia-iu-DBB"/>
                     </connections>
@@ -172,7 +161,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3AK-Ub-RyN" id="1w2-BO-YRH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -218,7 +207,7 @@
         <!--Navigation Controller-->
         <scene sceneID="2cF-RA-LJg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="edb-ge-9aR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigation" automaticallyAdjustsScrollViewInsets="NO" id="edb-ge-9aR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S5S-EY-6n0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
