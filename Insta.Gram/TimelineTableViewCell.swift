@@ -14,6 +14,10 @@ class TimelineTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    
+    static let cellIdentifier = "ChannelCell"
+    static let cellNib = UINib(nibName: "ChannelCell", bundle: Bundle.main)
 
     //Outlets
     @IBOutlet weak var displayPictureImageView: UIImageView!
@@ -38,19 +42,21 @@ class TimelineTableViewCell: UITableViewCell {
         didSet {
             
             let storyboard = UIStoryboard(name: "NewsFeed", bundle: Bundle.main)
-            guard let controller = storyboard?.instantiateViewController(withIdentifier: "AllCommentsViewController") as? AllCommentsViewController else {return}
+            guard let controller = storyboard.instantiateViewController(withIdentifier: "AllCommentsViewController") as? AllCommentsViewController else {return}
             
-            navigationController?.pushViewController(controller, animated: true)
+            
+//            navigationController?.pushViewController(controller, animated: true)
 
-            
+
         }
     }
     
     @IBOutlet weak var timelineTimestamp: UILabel!
     
     
+
     
-    
+
     
     
     

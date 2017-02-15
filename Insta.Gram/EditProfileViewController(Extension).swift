@@ -26,15 +26,20 @@ extension EditProfileViewController : UIImagePickerControllerDelegate, UINavigat
         
         
         
+        
         if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
             
             print(editedImage)
-            // uploadImage(image: editedImage)
+             uploadImage(image: editedImage)
+            self.profilePictureEdit.image = editedImage
+            
             
         }else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             
             print(originalImage)
-            //uploadImage(image: originalImage)
+            uploadImage(image: originalImage)
+            self.profilePictureEdit.image = originalImage
+
             
         }
         
@@ -42,6 +47,8 @@ extension EditProfileViewController : UIImagePickerControllerDelegate, UINavigat
         
     }
     
+
+
     //upload to storage
     func uploadImage(image: UIImage) {
         
@@ -89,7 +96,7 @@ extension EditProfileViewController : UIImagePickerControllerDelegate, UINavigat
                 
                 let profileDictionary : [String:Any] = ["TimeStamp" : urlTimeStamp, "ProfileImage" : urlString]
                 
-                ref.child("User").child(uid!).setValue(profileDictionary)
+                ref.child("user").child(uid!).setValue(profileDictionary)
                 
             }
             
