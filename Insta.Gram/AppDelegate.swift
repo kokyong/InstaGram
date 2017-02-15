@@ -91,15 +91,8 @@ extension AppDelegate {
     }
 }
 
-extension AppDelegate {
+
     
-    func displayLogin(){
-        let storyboard = UIStoryboard(name: "NewsFeed", bundle: Bundle.main)
-        let controller = storyboard.instantiateViewController(withIdentifier: "navigation") as? UINavigationController
-        window?.rootViewController = controller
-        
-    }
-    
-}
+
 
 
