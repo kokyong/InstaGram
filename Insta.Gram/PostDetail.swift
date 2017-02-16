@@ -16,6 +16,7 @@ class PostDetail {
     var likeCount : String?
     var caption : String?
     var postPicture : URL?
+    var id : String?
 
     init(withDictionary dictionary: [String:Any]) {
         
