@@ -20,7 +20,7 @@ class PostDetail {
     var username: String?
     var userDisplayPicture : URL?
     var userID: String?
-//    var id : String?
+    var id : String?
 
 
 
