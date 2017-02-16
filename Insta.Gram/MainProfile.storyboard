@@ -12,7 +12,7 @@
         <!--Main Profile View Controller-->
         <scene sceneID="qBC-cV-0TE">
             <objects>
-                <viewController id="Kp0-lv-qly" customClass="MainProfileViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainProfileViewController" id="Kp0-lv-qly" customClass="MainProfileViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Q5-ZE-ipn"/>
                         <viewControllerLayoutGuide type="bottom" id="H8Q-eU-LdU"/>
