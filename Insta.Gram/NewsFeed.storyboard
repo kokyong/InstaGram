@@ -13,7 +13,7 @@
         <!--Timeline View Controller-->
         <scene sceneID="Txg-OK-s9H">
             <objects>
-                <viewController id="HcB-uA-67A" customClass="TimelineViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimelineViewController" id="HcB-uA-67A" customClass="TimelineViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bvd-Ft-MJJ"/>
                         <viewControllerLayoutGuide type="bottom" id="jB3-kp-IpB"/>
@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zfh-pn-lPp" id="yQD-gD-gcI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -62,6 +62,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addPostButtonPressed" destination="bnr-az-FMi" id="5gs-oK-LAs"/>
+                        <outlet property="profileButtonPressed" destination="HPE-ye-Ee3" id="ynp-Op-CLi"/>
                         <outlet property="timelineTableView" destination="zu1-mH-qec" id="0mV-sF-vrE"/>
                     </connections>
                 </viewController>
@@ -161,7 +162,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3AK-Ub-RyN" id="1w2-BO-YRH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

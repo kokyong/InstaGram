@@ -48,6 +48,8 @@ class LoginViewController: UIViewController {
                 return
             }
             
+            guard let controller = UIStoryboard(name: "NewsFeed", bundle: Bundle.main).instantiateViewController(withIdentifier: "TimelineViewController") as?  TimelineViewController else { return }
+            self.navigationController? .pushViewController(controller, animated: true)
       
         })
         func webViewDidStartLoad(_ webView: UIWebView) {

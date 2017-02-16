@@ -65,10 +65,12 @@ class EditProfileViewController: UIViewController {
         
         guard let username = usernameTF.text, let email = emailTF.text, let password = passwordTF.text, let description = descriptionTF.text else {return}
         
+
         let uid = FIRAuth.auth()?.currentUser?.uid
         let ref = FIRDatabase.database().reference()
         let value = ["email": email, "passward": password, "username": username, "description": description]
-        ref.child("User").child(uid!).updateChildValues(value, withCompletionBlock: { (err, ref) in
+        
+        ref.child("user").child(uid!).updateChildValues(value, withCompletionBlock: { (err, ref) in
             
             if err != nil {
                 

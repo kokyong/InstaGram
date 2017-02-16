@@ -12,7 +12,7 @@
         <!--Main Profile View Controller-->
         <scene sceneID="qBC-cV-0TE">
             <objects>
-                <viewController id="Kp0-lv-qly" customClass="MainProfileViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainProfileViewController" id="Kp0-lv-qly" customClass="MainProfileViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Q5-ZE-ipn"/>
                         <viewControllerLayoutGuide type="bottom" id="H8Q-eU-LdU"/>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ioF-pR-Lvt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ioF-pR-Lvt">
                                 <rect key="frame" x="17" y="81" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3r1-mc-Vkn"/>
@@ -31,7 +31,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1p-zW-7BI">
                                 <rect key="frame" x="0.0" y="202" width="375" height="30.5"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="D">
+                                    <fragment content="Description">
                                         <attributes>
                                             <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" metaFont="system" size="26"/>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L6s-2B-jJn">
-                                <rect key="frame" x="0.0" y="232.5" width="375" height="390.5"/>
+                                <rect key="frame" x="0.0" y="232" width="375" height="391"/>
                                 <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SDN-SC-ovq">
                                     <size key="itemSize" width="50" height="50"/>
@@ -73,7 +73,7 @@
                                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="posts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pd-oj-CmU">
@@ -93,7 +93,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="58" height="16"/>
                                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCW-rE-zxc">
@@ -112,7 +112,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="54.5" height="16"/>
                                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="folowing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RK-wx-L13">
@@ -161,6 +161,7 @@
                         <outlet property="editProfileButton" destination="R1h-fX-dYW" id="6sQ-7D-mUx"/>
                         <outlet property="followersCount" destination="rRm-73-o31" id="ykN-Bb-Mvw"/>
                         <outlet property="followingCount" destination="Tgz-lH-1Jw" id="vPs-Eo-8d5"/>
+                        <outlet property="postColectionView" destination="L6s-2B-jJn" id="rBc-Jv-N8N"/>
                         <outlet property="postsCount" destination="s4U-vz-FWm" id="h7c-VC-KvM"/>
                         <outlet property="profilePicture" destination="ioF-pR-Lvt" id="qNd-72-OzH"/>
                     </connections>
@@ -203,6 +204,9 @@
                             <constraint firstAttribute="trailing" secondItem="Wj7-7J-MUu" secondAttribute="trailing" id="ntZ-12-u4n"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="followerTableView" destination="UQr-JO-bm6" id="5VN-nt-WnG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNs-t5-Eg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -211,7 +215,7 @@
         <!--Edit Profile View Controller-->
         <scene sceneID="0XR-Cy-Mzk">
             <objects>
-                <viewController id="iPW-L1-Znw" customClass="EditProfileViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileViewController" id="iPW-L1-Znw" customClass="EditProfileViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VWy-3g-KnU"/>
                         <viewControllerLayoutGuide type="bottom" id="4Fi-pd-YCk"/>
@@ -220,7 +224,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="neh-ER-Wdl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="neh-ER-Wdl">
                                 <rect key="frame" x="87" y="56" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="b9S-AS-YuY"/>
@@ -261,9 +265,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvo-vD-XzJ">
-                                <rect key="frame" x="157" y="552" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvo-vD-XzJ">
+                                <rect key="frame" x="157" y="541" width="60" height="30"/>
                                 <state key="normal" title="Confirm!">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -272,12 +275,15 @@
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pHV-4G-7q8" firstAttribute="leading" secondItem="J6d-ua-Bxy" secondAttribute="leading" constant="16" id="00f-xL-KP9"/>
+                            <constraint firstAttribute="trailing" secondItem="Lvo-vD-XzJ" secondAttribute="trailing" constant="157.5" id="4IG-Ga-u4m"/>
                             <constraint firstAttribute="trailing" secondItem="Ex5-Gj-4uW" secondAttribute="trailing" constant="16" id="Dv1-wS-0qO"/>
                             <constraint firstItem="XvR-vC-Jkf" firstAttribute="leading" secondItem="J6d-ua-Bxy" secondAttribute="leading" constant="114.5" id="HfW-3f-xeX"/>
                             <constraint firstItem="C7h-wC-rSX" firstAttribute="top" secondItem="pHV-4G-7q8" secondAttribute="bottom" constant="5" id="NXW-QC-Fa5"/>
                             <constraint firstItem="amN-np-l9n" firstAttribute="leading" secondItem="J6d-ua-Bxy" secondAttribute="leading" constant="16" id="PHL-TG-Yfj"/>
                             <constraint firstItem="C7h-wC-rSX" firstAttribute="leading" secondItem="J6d-ua-Bxy" secondAttribute="leading" constant="16" id="RAM-kt-SLD"/>
                             <constraint firstAttribute="trailing" secondItem="neh-ER-Wdl" secondAttribute="trailing" constant="87.5" id="SPT-cf-doY"/>
+                            <constraint firstItem="Lvo-vD-XzJ" firstAttribute="leading" secondItem="J6d-ua-Bxy" secondAttribute="leading" constant="157.5" id="Scd-Gu-K6y"/>
+                            <constraint firstItem="Lvo-vD-XzJ" firstAttribute="top" secondItem="C7h-wC-rSX" secondAttribute="bottom" constant="62" id="TKg-E9-Gej"/>
                             <constraint firstItem="XvR-vC-Jkf" firstAttribute="top" secondItem="neh-ER-Wdl" secondAttribute="bottom" constant="8" id="X0f-Fk-FgX"/>
                             <constraint firstAttribute="trailing" secondItem="pHV-4G-7q8" secondAttribute="trailing" constant="16" id="XKD-x9-o53"/>
                             <constraint firstItem="pHV-4G-7q8" firstAttribute="top" secondItem="Ex5-Gj-4uW" secondAttribute="bottom" constant="5" id="Ykk-ui-6DE"/>
@@ -308,7 +314,7 @@
         <!--Navigation Controller-->
         <scene sceneID="AHa-Tw-620">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Evq-hi-EMc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigation" automaticallyAdjustsScrollViewInsets="NO" id="Evq-hi-EMc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sfB-vb-5wK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -357,10 +363,16 @@
                             <constraint firstAttribute="trailing" secondItem="AeK-83-w1d" secondAttribute="trailing" id="zhy-6T-1jt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="followingTableView" destination="AeK-83-w1d" id="LsY-KU-Adz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fm-24-UJI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1633" y="687"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ProfileIcon" width="225" height="225"/>
+    </resources>
 </document>

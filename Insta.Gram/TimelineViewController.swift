@@ -41,8 +41,30 @@ class TimelineViewController: UIViewController {
         }
     }
     
+    // KY
+    @IBOutlet weak var profileButtonPressed: UIBarButtonItem!{
+        
+        didSet {
+            
+            profileButtonPressed.action = #selector(pushToPofileController)
+            
+            profileButtonPressed.target = self
+            
+        }
+        
+    }
     
-    
+    func pushToPofileController() {
+        
+        let storyboard = UIStoryboard(name: "MainProfile", bundle: Bundle.main)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "MainProfileViewController") as? MainProfileViewController else {return}
+        
+        
+        navigationController?.pushViewController(controller, animated: true)
+
+        
+    }
+    //KY
     
     
     var posts : [PostDetail] = []
