@@ -12,7 +12,7 @@ import Firebase
 class EditProfileViewController: UIViewController {
     
     
-
+    
     
     //IBOutlet
     
@@ -45,10 +45,9 @@ class EditProfileViewController: UIViewController {
         present(pickerImageController, animated: true, completion: nil)
         
     }
-
+    
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
-    @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var descriptionTF: UITextField!
     
     @IBOutlet weak var confirmEditButton: UIButton!{
@@ -63,12 +62,14 @@ class EditProfileViewController: UIViewController {
     
     func confirmEdit() {
         
-        guard let username = usernameTF.text, let email = emailTF.text, let password = passwordTF.text, let description = descriptionTF.text else {return}
+        guard let username = usernameTF.text, let email = emailTF.text, let description = descriptionTF.text else {return}
+        
         
         let uid = FIRAuth.auth()?.currentUser?.uid
         let ref = FIRDatabase.database().reference()
-        let value = ["email": email, "passward": password, "username": username, "description": description]
-        ref.child("User").child(uid!).updateChildValues(value, withCompletionBlock: { (err, ref) in
+        let value = ["email": email, "username": username, "description": description] as [String : Any]
+        
+        ref.child("users").child(uid!).updateChildValues(value, withCompletionBlock: { (err, ref) in
             
             if err != nil {
                 
@@ -79,7 +80,13 @@ class EditProfileViewController: UIViewController {
                 
             }
         })
-
+        
+        
+        let storyboard = UIStoryboard(name: "MainProfile", bundle: Bundle.main)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "MainProfileViewController") as? MainProfileViewController else {return}
+        
+        
+        navigationController?.pushViewController(controller, animated: true)
         
     }
     
