@@ -17,6 +17,8 @@ class MainProfileViewController: UIViewController {
     var postDetails : [PostDetail] = []
     var displayUserName = String()
     var displayUserProfile = String()
+    var displayUserDescription = String()
+    
     
     let ref = FIRDatabase.database().reference()
     
@@ -71,22 +73,35 @@ class MainProfileViewController: UIViewController {
         super.viewDidLoad()
         
         let uid = FIRAuth.auth()?.currentUser?.uid
-        FIRDatabase.database().reference().child("user").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+        let ref = FIRDatabase.database().reference()
+        ref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             
             
             let value = snapshot.value as? NSDictionary
-            let displayName = value?["username"] as? String ?? ""
-            let displayPicture = value?["profileURL"] as? String ?? ""
             
-            self.displayUserName = displayName
-            self.displayUserProfile = displayPicture
-            dump(displayName)
-            dump(displayPicture)
+            let displayName = value?["username"] as? String
+            let displayDescription = value?["description"] as? String
+            let displayPicture = value?["profileURL"] as? String
+            
+            self.displayUserProfile = displayPicture!
+            self.displayUserName = displayName!
+            self.displayUserDescription = displayDescription!
             
             
+            self.descriptionLabel.text = self.displayUserDescription
+            self.navigationItem.title = self.displayUserName
+            //self.profilePicture.image = self.displayUserProfile
+            // dump(displayPicture)
+            //dump(displayName)
             
-        })
+            if let url = NSURL(string: self.displayUserProfile) {
+                if let data = NSData(contentsOf: url as URL) {
+                    self.profilePicture.image = UIImage(data: data as Data)
+                }
+            }
+
         
+        })
         
     }
 }
@@ -101,10 +116,10 @@ class MainProfileViewController: UIViewController {
 //
 //        let postDetail = postDetails[indexPath.row]
 //
-//        guard let postCell = postColectionView.dequeueReusableCell(withIdentifier: FollowerTableViewCell.cellIdentifier, for: indexPath) as? FollowerTableViewCell
+//        guard let postCell = postColectionView.dequeueReusableCell(withIdentifier: postColectionView, for: indexPath) as? postColectionView
 //
 //            else {
-//                return UITableViewCell()
+//                return UICollectionViewCell()
 //        }
 //
 //
@@ -119,8 +134,8 @@ class MainProfileViewController: UIViewController {
 //
 //
 //    }
-//    
-//    
+//
+//
 //}
 
 

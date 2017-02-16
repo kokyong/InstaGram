@@ -39,11 +39,20 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtr-dU-DWq">
                                 <rect key="frame" x="0.0" y="625" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="NewsF" width="75" id="blb-Hp-Jdk"/>
-                                    <barButtonItem title="+" width="75" id="bnr-az-FMi"/>
-                                    <barButtonItem title="Search" width="75" id="Cew-qf-yj9"/>
-                                    <barButtonItem title="Profile" width="75" id="HPE-ye-Ee3"/>
+                                    <barButtonItem title="NewsF" width="75" id="blb-Hp-Jdk">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="+" width="75" id="bnr-az-FMi">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Search" width="75" id="Cew-qf-yj9">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Profile" width="75" id="HPE-ye-Ee3">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
                                 </items>
+                                <color key="barTintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

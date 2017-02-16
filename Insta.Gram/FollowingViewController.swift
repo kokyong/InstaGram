@@ -60,7 +60,7 @@ extension FollowingViewController : UITableViewDataSource {
         }
         
         
-        if let url = followingDetail.profilePicture {
+        if let url = followingDetail.profilePictureURL {
             
             if let data = try? Data(contentsOf: url) {
                 followingCell.followingPicture?.image = UIImage(data: data)
