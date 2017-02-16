@@ -118,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				941732491E4DAF2300D90FBE /* AppDelegate.swift */,
-				C058301E1E5153B800C8FDD0 /* TimelineViewController.swift */,
 				C01F0A251E5166B100451A60 /* Timeline */,
 				94B2E7111E51672400C33528 /* MainProfile */,
 				9417324B1E4DAF2300D90FBE /* LoginViewController.swift */,
@@ -198,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				C01F0A1F1E51651300451A60 /* NewsFeed.storyboard */,
+				C058301E1E5153B800C8FDD0 /* TimelineViewController.swift */,
 				C01F0A2A1E51A33B00451A60 /* AllCommentsViewController.swift */,
 				C0E401AF1E52BDD1009ECF1B /* CommentsTableViewCell.swift */,
 				C0E401B01E52BDD1009ECF1B /* CommentsTableViewCell.xib */,
@@ -278,9 +278,7 @@
 				C0E401B21E52BDD1009ECF1B /* CommentsTableViewCell.xib in Resources */,
 				94B2E70E1E51668C00C33528 /* MainProfile.storyboard in Resources */,
 				941732541E4DAF2300D90FBE /* Assets.xcassets in Resources */,
-				94B2E71F1E521D4000C33528 /* FollowerTableViewCell.xib in Resources */,
 				9417325F1E4DB3CC00D90FBE /* GoogleService-Info.plist in Resources */,
-				C01F0A241E5166A200451A60 /* TimelineTableViewCell.xib in Resources */,
 				9417324F1E4DAF2300D90FBE /* Main.storyboard in Resources */,
 				38EBB0F91E515F3D00D8A40F /* Auth.storyboard in Resources */,
 			);
