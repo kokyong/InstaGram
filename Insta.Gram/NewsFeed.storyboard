@@ -13,7 +13,7 @@
         <!--Timeline View Controller-->
         <scene sceneID="Txg-OK-s9H">
             <objects>
-                <viewController id="HcB-uA-67A" customClass="TimelineViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimelineViewController" id="HcB-uA-67A" customClass="TimelineViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bvd-Ft-MJJ"/>
                         <viewControllerLayoutGuide type="bottom" id="jB3-kp-IpB"/>
