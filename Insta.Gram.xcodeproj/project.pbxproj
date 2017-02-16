@@ -33,6 +33,7 @@
 		C01F0A2B1E51A33B00451A60 /* AllCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F0A2A1E51A33B00451A60 /* AllCommentsViewController.swift */; };
 		C058301F1E5153B800C8FDD0 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C058301E1E5153B800C8FDD0 /* TimelineViewController.swift */; };
 		C0BC48461E4DB9F2001DA1BD /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC48451E4DB9F2001DA1BD /* CreateAccountViewController.swift */; };
+		C0C7311E1E55B2A700E635F0 /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01F0A221E5166A200451A60 /* TimelineTableViewCell.xib */; };
 		C0E401B11E52BDD1009ECF1B /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E401AF1E52BDD1009ECF1B /* CommentsTableViewCell.swift */; };
 		C0E401B21E52BDD1009ECF1B /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E401B01E52BDD1009ECF1B /* CommentsTableViewCell.xib */; };
 		C0E401B61E52C385009ECF1B /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E401B51E52C385009ECF1B /* Comments.swift */; };
@@ -118,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				941732491E4DAF2300D90FBE /* AppDelegate.swift */,
-				C058301E1E5153B800C8FDD0 /* TimelineViewController.swift */,
 				C01F0A251E5166B100451A60 /* Timeline */,
 				94B2E7111E51672400C33528 /* MainProfile */,
 				9417324B1E4DAF2300D90FBE /* LoginViewController.swift */,
@@ -198,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				C01F0A1F1E51651300451A60 /* NewsFeed.storyboard */,
+				C058301E1E5153B800C8FDD0 /* TimelineViewController.swift */,
 				C01F0A2A1E51A33B00451A60 /* AllCommentsViewController.swift */,
 				C0E401AF1E52BDD1009ECF1B /* CommentsTableViewCell.swift */,
 				C0E401B01E52BDD1009ECF1B /* CommentsTableViewCell.xib */,
@@ -274,13 +275,12 @@
 			files = (
 				94B2E7231E52200E00C33528 /* FollowingTableViewCell.xib in Resources */,
 				941732571E4DAF2300D90FBE /* LaunchScreen.storyboard in Resources */,
+				C0C7311E1E55B2A700E635F0 /* TimelineTableViewCell.xib in Resources */,
 				C01F0A201E51651300451A60 /* NewsFeed.storyboard in Resources */,
 				C0E401B21E52BDD1009ECF1B /* CommentsTableViewCell.xib in Resources */,
 				94B2E70E1E51668C00C33528 /* MainProfile.storyboard in Resources */,
 				941732541E4DAF2300D90FBE /* Assets.xcassets in Resources */,
-				94B2E71F1E521D4000C33528 /* FollowerTableViewCell.xib in Resources */,
 				9417325F1E4DB3CC00D90FBE /* GoogleService-Info.plist in Resources */,
-				C01F0A241E5166A200451A60 /* TimelineTableViewCell.xib in Resources */,
 				9417324F1E4DAF2300D90FBE /* Main.storyboard in Resources */,
 				38EBB0F91E515F3D00D8A40F /* Auth.storyboard in Resources */,
 			);

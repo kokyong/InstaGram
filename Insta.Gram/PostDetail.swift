@@ -11,35 +11,56 @@ import UIKit
 
 class PostDetail {
     
-    var timeStamp : TimeInterval?
+    var timestamp : TimeInterval?
     var comment : String?
-    var likeCount : String?
+    var likes : Int?
     var caption : String?
-    var postPicture : URL?
+    var pathToImage : URL?
+    var postID: String?
+    var username: String?
+    var userDisplayPicture : URL?
+    var userID: String?
+//    var id : String?
+
+
 
     init(withDictionary dictionary: [String:Any]) {
         
+//        id = String(index)
+
+        timestamp = dictionary["timestamp"] as? TimeInterval
         comment = dictionary["comment"] as? String
-        likeCount = dictionary["likeCount"] as? String
+        likes = dictionary["likes"] as? Int
         caption = dictionary["caption"] as? String
-        timeStamp = dictionary["timeStamp"] as? TimeInterval
+        postID = dictionary["postID"] as? String
+        username = dictionary["username"] as? String
+        userID = dictionary["userID"] as? String
         
-        if let postPictureURL = dictionary["postPicture"] as? String{
+        if let postPictureURL = dictionary["pathToImage"] as? String{
             
-            postPicture = URL(string: postPictureURL)
+            pathToImage = URL(string: postPictureURL)
             
         }
+        
+        
+        
+        if let displayPicture = dictionary["userDisplayPicture"] as? String{
+            
+            userDisplayPicture = URL(string: displayPicture)
+        }
+        
+     
     }
     
     func timeAgo() -> String {
         
-        guard let timeStamp = timeStamp
+        guard let timestamp = timestamp
             else {
                 
                 return("Time stamp format error")
         }
         
-        let sentTime = Date(timeIntervalSinceReferenceDate: timeStamp)
+        let sentTime = Date(timeIntervalSinceReferenceDate: timestamp)
         let dataformatter = DateFormatter()
         dataformatter.dateFormat = "d / MM / yyyy (HH:mm:ss)"
         

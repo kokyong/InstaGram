@@ -96,7 +96,7 @@
                                 <rect key="frame" x="8" y="64" width="359" height="355"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdL-rd-Cfz">
-                                <rect key="frame" x="136" y="30" width="102" height="30"/>
+                                <rect key="frame" x="136.5" y="30" width="102" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psI-WC-S4h">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="30"/>
@@ -136,7 +136,7 @@
         <!--All Comments View Controller-->
         <scene sceneID="FTW-4j-TDL">
             <objects>
-                <viewController id="v2H-mK-FnM" customClass="AllCommentsViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllCommentsViewController" id="v2H-mK-FnM" customClass="AllCommentsViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SyD-ta-e7a"/>
                         <viewControllerLayoutGuide type="bottom" id="UMW-gu-Ece"/>
