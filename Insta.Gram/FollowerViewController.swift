@@ -61,7 +61,7 @@ extension FollowerViewController : UITableViewDataSource {
         }
         
         
-        if let url = followerDetail.profilePicture {
+        if let url = followerDetail.profilePictureURL {
             
             if let data = try? Data(contentsOf: url) {
                 followerCell.followerPicture?.image = UIImage(data: data)

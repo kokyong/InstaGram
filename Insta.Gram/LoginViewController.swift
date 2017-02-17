@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+
     }
     
     /// Login Function
@@ -45,6 +45,7 @@ class LoginViewController: UIViewController {
             
             if error != nil {
                 print(error! as NSError)
+
                 return
             }
             
@@ -61,6 +62,9 @@ class LoginViewController: UIViewController {
         }
 
     }
+    
+    
+
     
 }
 

@@ -11,6 +11,7 @@ import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
 
+
 class TimelineViewController: UIViewController {
 
     
@@ -20,6 +21,11 @@ class TimelineViewController: UIViewController {
         didSet {
             
         timelineTableView.dataSource = self
+        timelineTableView.register(TimelineTableViewCell.cellNib, forCellReuseIdentifier: TimelineTableViewCell.cellIdentifier)
+            
+            timelineTableView.estimatedRowHeight = 80
+            timelineTableView
+                .rowHeight = UITableViewAutomaticDimension
             
         }
     }
@@ -67,7 +73,7 @@ class TimelineViewController: UIViewController {
     //KY
     
     
-    var posts : [PostDetail] = []
+    var posts: [PostDetail] = []
     var following = [String]()
     var dbRef : FIRDatabaseReference!
 
@@ -76,52 +82,13 @@ class TimelineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timelineTableView.register(TimelineTableViewCell.cellNib, forCellReuseIdentifier: TimelineTableViewCell.cellIdentifier)
-        
 
-//        dbRef = FIRDatabase.database().reference()
-//        
-//        dbRef.child("").queryOrderedByKey().observeSingleEvent(of: .value, with: { snapshot in
-//         
-//            let users = snapshot.value as! [String : AnyObject]
-//        
-//            for (_,value) in users {
-//                if let uid = value["uid"] as? String {
-//                    if uid == FIRAuth.auth()?.currentUser?.uid {
-//                        if let followingUsers = value ["following"] as? [String : String] {
-//                            for (_,user) in followingUsers {
-//                            self.following.append(user)
-//                                
-//                          }
-//                        }
-//                        self.following.append(FIRAuth.auth()!.currentUser!.uid)
-//                        
-//                        self.dbRef.child("").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
-//                            
-//                            let postsSnap = snap.value as! [String : AnyObject]
-//                            
-//                            for (_,post) in postsSnap {
-//                                if let userID = value["userID"] as? String {
-//                                    for each in self.following {
-//                                        if each == userID {
-//                                            let posst = PostDetail()
-//                                            if let username = post["username"] as? String, let likes = post ["likes"] as? Int,
-//                                            let pathToImage = post["pathToImage"] as? String,
-//                                            let postID =
-//                                            
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        })
-//                    }
-//                }
-//            }
-//        })
-//
-//    
+        
+        fetchPost()
+
+    
 }
-//    
+
     
     func pushToPostImage() {
         let storyboard = UIStoryboard(name: "NewsFeed", bundle: Bundle.main)
@@ -132,16 +99,43 @@ class TimelineViewController: UIViewController {
     }
     
     
- }
+    func fetchPost(){
+        
+        dbRef = FIRDatabase.database().reference()
+        
+        dbRef.child("posts").observe(.value, with: { (snapshot) in
 
+            if let snapValues = snapshot.value as? [String : Any] {
+                
+                var tempPost : [PostDetail] = []
+                
+//                var postIndex = 0
+                
+                for (key, value) in snapValues {
+                    
+                    if let postDictionary = value as? [String: Any] {
+                        
+                        let newPost = PostDetail(withDictionary: postDictionary)
+                        
+                        tempPost.append(newPost) //save it to temporary channel
+                    }
+                }
+                self.posts = tempPost
+                self.timelineTableView.reloadData()
+                
+            }
+            
+         
+        })
 
+}
 
-
+}
 //EXTENSION
 extension TimelineViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -150,18 +144,144 @@ extension TimelineViewController: UITableViewDataSource {
             else {
                 return UITableViewCell()
         }
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: TimelineTableViewCell.cellIdentifier, for: indexPath) as? TimelineTableViewCell
-//            else {
-//                return UITableViewCell()
-//        }
-//        
-//        return cell
+        let postNumber = posts[indexPath.row]
         
-        return UITableViewCell()
+        if let url = postNumber.userDisplayPicture {
+            
+            
+            if let data = try? Data(contentsOf: url) {
+                cell.displayPictureImageView.image = UIImage(data: data)
+                
+                
+            }
+            
+        }
+        
+        if let url = postNumber.pathToImage {
+            
+            if let data = try? Data(contentsOf: url) {
+                cell.imagePostedImageView.image = UIImage(data: data)
+                
+                
+            }
+            
+        }
+        
+        
+        cell.userNameLabel.text = postNumber.username
+        cell.likeButton.setTitle("Like", for: .normal)
+//        cell.likeButton.setImage(UIImage (named: "heart"), for: .normal)
+        cell.numberOfLikesLabel.text = "\(postNumber.likes!) Likes"
+        cell.captionUsername.text = postNumber.username
+        cell.captionMessages.text = postNumber.caption
+        cell.viewAllCommentsButton.setTitle("View All Comments", for: .normal)
+        cell.timelineTimestamp.text = postNumber.timeAgo()
+        
+        
+
+        
+        return cell
     }
     
 }
 
+extension UIImageView {
+    
+    func downloadImage(from imgURL: String!) {
+        let url = URLRequest(url: URL(string: imgURL)!)
+        
+        let task = URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data!)
+            }
+            
+        }
+        
+        task.resume()
+    }
+}
 
 
+
+
+//Mark Method 2
+
+//    func fetchPost() {
+//
+//        let ref = FIRDatabase.database().reference()
+//
+//        dbRef.child("users").queryOrderedByKey().observeSingleEvent(of: .value, with: { snapshot in
+//
+//            let users = snapshot.value as! [String : AnyObject]
+//
+//            for (_,value) in users {
+//                if let uid = value["uid"] as? String {
+//                    if uid == FIRAuth.auth()?.currentUser?.uid {
+//                        if let followingUsers = value["following"] as? [String : String]{
+//                            for (_,user) in followingUsers{
+//                                self.following.append(user)
+//                            }
+//                        }
+//                        self.following.append(FIRAuth.auth()!.currentUser!.uid)
+//
+//        ref.child("posts").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
+//
+//
+//
+//
+//
+//                            let postsSnap = snap.value as! [String : AnyObject]
+//
+//                        guard let value = snap.value as? [String: Any] else [return]
+//                         let newPost = PostDetail(withDictionary: value)
+//
+//
+//                            for (_,post) in postsSnap {
+//                                if let userID = post["userID"] as? String {
+//                                    for each in self.following {
+//                                        if each == userID {
+//
+//
+//                                            let posst = PostDetail()
+//                                            if let username = post["username"] as? String, let likes = post["likes"] as? Int, let pathToImage = post["pathToImage"] as? String, let postID = post["postID"] as? String, let userDisplayPicture = post["userDisplayPicture"] as? String, let timestamp = post["timestamp"] as? TimeInterval, let caption = post["caption"] as? String, let captionUsername = post["username"] as? String {
+//
+//                                                posst.username = username
+//                                                posst.likes = likes
+//                                                posst.pathToImage = pathToImage
+//                                                posst.postID = postID
+//                                                posst.userID = userID
+//                                                posst.userDisplayPicture = userDisplayPicture
+//                                                posst.timestamp = timestamp
+//                                                posst.caption = caption
+//                                                posst.captionUsername = username
+//
+//
+//
+//
+//                                                self.posts.append(posst)
+//                                             }
+//                                        }
+//                                    }
+//
+//                                    self.timelineTableView.reloadData()
+//                                }
+//                        }
+//                        })
+//                    }
+//                }
+//            }
+//
+//        })
+//        ref.removeAllObservers()
+//    }
+//
+//
+// }
 

@@ -39,11 +39,20 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtr-dU-DWq">
                                 <rect key="frame" x="0.0" y="625" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="NewsF" width="75" id="blb-Hp-Jdk"/>
-                                    <barButtonItem title="+" width="75" id="bnr-az-FMi"/>
-                                    <barButtonItem title="Search" width="75" id="Cew-qf-yj9"/>
-                                    <barButtonItem title="Profile" width="75" id="HPE-ye-Ee3"/>
+                                    <barButtonItem title="NewsF" width="75" id="blb-Hp-Jdk">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="+" width="75" id="bnr-az-FMi">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Search" width="75" id="Cew-qf-yj9">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Profile" width="75" id="HPE-ye-Ee3">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
                                 </items>
+                                <color key="barTintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,7 +105,7 @@
                                 <rect key="frame" x="8" y="64" width="359" height="355"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdL-rd-Cfz">
-                                <rect key="frame" x="136" y="30" width="102" height="30"/>
+                                <rect key="frame" x="136.5" y="30" width="102" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psI-WC-S4h">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="30"/>
@@ -136,7 +145,7 @@
         <!--All Comments View Controller-->
         <scene sceneID="FTW-4j-TDL">
             <objects>
-                <viewController id="v2H-mK-FnM" customClass="AllCommentsViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllCommentsViewController" id="v2H-mK-FnM" customClass="AllCommentsViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SyD-ta-e7a"/>
                         <viewControllerLayoutGuide type="bottom" id="UMW-gu-Ece"/>
