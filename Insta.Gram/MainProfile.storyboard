@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,7 +42,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L6s-2B-jJn">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L6s-2B-jJn">
                                 <rect key="frame" x="0.0" y="232" width="375" height="391"/>
                                 <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SDN-SC-ovq">
@@ -51,14 +52,28 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" semanticContentAttribute="forceLeftToRight" reuseIdentifier="postCollectionCell" id="4Nj-oe-IHC">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" semanticContentAttribute="forceLeftToRight" reuseIdentifier="PostPictureCollectionViewCell" id="4Nj-oe-IHC" customClass="PostPictureCollectionViewCell" customModule="Insta_Gram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unicorn" translatesAutoresizingMaskIntoConstraints="NO" id="n34-KV-tCL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="n34-KV-tCL" secondAttribute="bottom" id="GYd-Up-mQE"/>
+                                            <constraint firstItem="n34-KV-tCL" firstAttribute="top" secondItem="4Nj-oe-IHC" secondAttribute="top" id="KWj-jn-2Yv"/>
+                                            <constraint firstItem="n34-KV-tCL" firstAttribute="leading" secondItem="4Nj-oe-IHC" secondAttribute="leading" id="Kgn-vL-JAH"/>
+                                            <constraint firstAttribute="trailing" secondItem="n34-KV-tCL" secondAttribute="trailing" id="lMB-uj-knY"/>
+                                        </constraints>
                                         <size key="customSize" width="100" height="100"/>
+                                        <connections>
+                                            <outlet property="postImageView" destination="n34-KV-tCL" id="PJ8-tF-tu5"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -155,11 +170,34 @@
                             <constraint firstItem="L6s-2B-jJn" firstAttribute="leading" secondItem="exG-uy-w0l" secondAttribute="leading" id="uBP-cq-wrD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0fl-Q2-258"/>
+                    <navigationItem key="navigationItem" id="0fl-Q2-258">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" style="plain" id="aLs-43-hR5">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oo2-gg-sxg">
+                                    <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Following">
+                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="ZPv-FV-MxQ">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="e2j-xL-pcj">
+                                    <rect key="frame" x="185" y="7" width="83" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Followers">
+                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionLabel" destination="D1p-zW-7BI" id="27t-sJ-0mm"/>
                         <outlet property="editProfileButton" destination="R1h-fX-dYW" id="6sQ-7D-mUx"/>
+                        <outlet property="followersButton" destination="ZPv-FV-MxQ" id="6GL-QO-6VK"/>
                         <outlet property="followersCount" destination="rRm-73-o31" id="ykN-Bb-Mvw"/>
+                        <outlet property="followingButton" destination="aLs-43-hR5" id="2oX-VN-HWv"/>
                         <outlet property="followingCount" destination="Tgz-lH-1Jw" id="vPs-Eo-8d5"/>
                         <outlet property="postColectionView" destination="L6s-2B-jJn" id="rBc-Jv-N8N"/>
                         <outlet property="postsCount" destination="s4U-vz-FWm" id="h7c-VC-KvM"/>
@@ -173,7 +211,7 @@
         <!--Follower View Controller-->
         <scene sceneID="YyQ-pN-tRW">
             <objects>
-                <viewController id="Rew-dd-Gyu" customClass="FollowerViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FollowerViewController" id="Rew-dd-Gyu" customClass="FollowerViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kyr-mX-xyH"/>
                         <viewControllerLayoutGuide type="bottom" id="z0g-tJ-WGh"/>
@@ -268,7 +306,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvo-vD-XzJ">
                                 <rect key="frame" x="157" y="541" width="60" height="30"/>
                                 <state key="normal" title="Confirm!">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>
@@ -310,6 +348,39 @@
             </objects>
             <point key="canvasLocation" x="1632.8" y="8.5457271364317844"/>
         </scene>
+        <!--Single View Post View Controller-->
+        <scene sceneID="N5e-h4-DQ0">
+            <objects>
+                <viewController storyboardIdentifier="SingleViewPostViewController" id="Yq9-ug-icG" customClass="SingleViewPostViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HeA-b5-aRX"/>
+                        <viewControllerLayoutGuide type="bottom" id="1UL-uq-KCT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NrC-s5-xt2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ehQ-3y-kZX">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ehQ-3y-kZX" firstAttribute="leading" secondItem="NrC-s5-xt2" secondAttribute="leading" id="AJv-w8-HUe"/>
+                            <constraint firstItem="1UL-uq-KCT" firstAttribute="top" secondItem="ehQ-3y-kZX" secondAttribute="bottom" id="COs-Ca-F5O"/>
+                            <constraint firstItem="ehQ-3y-kZX" firstAttribute="top" secondItem="HeA-b5-aRX" secondAttribute="bottom" constant="40" id="IkZ-Cm-L9W"/>
+                            <constraint firstAttribute="trailing" secondItem="ehQ-3y-kZX" secondAttribute="trailing" id="xnm-Rj-HRy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="singlePostTableView" destination="ehQ-3y-kZX" id="ftc-PG-hZm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xyU-JT-eYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="-667"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="AHa-Tw-620">
             <objects>
@@ -331,7 +402,7 @@
         <!--Following View Controller-->
         <scene sceneID="XoC-0s-t1h">
             <objects>
-                <viewController id="DQH-rJ-AMe" customClass="FollowingViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FollowingViewController" id="DQH-rJ-AMe" customClass="FollowingViewController" customModule="Insta_Gram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4JP-AQ-xdX"/>
                         <viewControllerLayoutGuide type="bottom" id="9tI-mD-RT3"/>
@@ -373,5 +444,6 @@
     </scenes>
     <resources>
         <image name="ProfileIcon" width="225" height="225"/>
+        <image name="Unicorn" width="225" height="225"/>
     </resources>
 </document>

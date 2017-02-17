@@ -16,6 +16,8 @@
 		941732541E4DAF2300D90FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 941732531E4DAF2300D90FBE /* Assets.xcassets */; };
 		941732571E4DAF2300D90FBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941732551E4DAF2300D90FBE /* LaunchScreen.storyboard */; };
 		9417325F1E4DB3CC00D90FBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9417325E1E4DB3CC00D90FBE /* GoogleService-Info.plist */; };
+		94A060031E56862400015BDA /* SingleViewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A060021E56862400015BDA /* SingleViewPostViewController.swift */; };
+		94A060051E5694EF00015BDA /* MainProfile(extention).swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A060041E5694EF00015BDA /* MainProfile(extention).swift */; };
 		94B2E70E1E51668C00C33528 /* MainProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B2E70D1E51668C00C33528 /* MainProfile.storyboard */; };
 		94B2E7101E5166CC00C33528 /* MainProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E70F1E5166CC00C33528 /* MainProfileViewController.swift */; };
 		94B2E7131E51727900C33528 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7121E51727900C33528 /* EditProfileViewController.swift */; };
@@ -27,6 +29,7 @@
 		94B2E7231E52200E00C33528 /* FollowingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B2E7211E52200E00C33528 /* FollowingTableViewCell.xib */; };
 		94B2E7291E52B24600C33528 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7281E52B24600C33528 /* FollowingViewController.swift */; };
 		94B2E72B1E52B2B600C33528 /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E72A1E52B2B600C33528 /* FollowerViewController.swift */; };
+		94B2E7371E55FD2300C33528 /* PostPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2E7361E55FD2300C33528 /* PostPictureCollectionViewCell.swift */; };
 		C01F0A201E51651300451A60 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C01F0A1F1E51651300451A60 /* NewsFeed.storyboard */; };
 		C01F0A231E5166A200451A60 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F0A211E5166A200451A60 /* TimelineTableViewCell.swift */; };
 		C01F0A271E51929E00451A60 /* publishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F0A261E51929E00451A60 /* publishPostViewController.swift */; };
@@ -50,6 +53,8 @@
 		941732561E4DAF2300D90FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		941732581E4DAF2300D90FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9417325E1E4DB3CC00D90FBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		94A060021E56862400015BDA /* SingleViewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleViewPostViewController.swift; sourceTree = "<group>"; };
+		94A060041E5694EF00015BDA /* MainProfile(extention).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainProfile(extention).swift"; sourceTree = "<group>"; };
 		94B2E70D1E51668C00C33528 /* MainProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainProfile.storyboard; sourceTree = "<group>"; };
 		94B2E70F1E5166CC00C33528 /* MainProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainProfileViewController.swift; sourceTree = "<group>"; };
 		94B2E7121E51727900C33528 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +67,7 @@
 		94B2E7211E52200E00C33528 /* FollowingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingTableViewCell.xib; sourceTree = "<group>"; };
 		94B2E7281E52B24600C33528 /* FollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
 		94B2E72A1E52B2B600C33528 /* FollowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
+		94B2E7361E55FD2300C33528 /* PostPictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		A02FDD1C533191EA0540E3BF /* Pods-Insta.Gram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insta.Gram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insta.Gram/Pods-Insta.Gram.debug.xcconfig"; sourceTree = "<group>"; };
 		AD055100AF878245CB65DB95 /* Pods-Insta.Gram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insta.Gram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Insta.Gram/Pods-Insta.Gram.release.xcconfig"; sourceTree = "<group>"; };
 		C01F0A1F1E51651300451A60 /* NewsFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsFeed.storyboard; sourceTree = "<group>"; };
@@ -139,6 +145,9 @@
 			children = (
 				94B2E70D1E51668C00C33528 /* MainProfile.storyboard */,
 				94B2E70F1E5166CC00C33528 /* MainProfileViewController.swift */,
+				94A060041E5694EF00015BDA /* MainProfile(extention).swift */,
+				94B2E7361E55FD2300C33528 /* PostPictureCollectionViewCell.swift */,
+				94A060021E56862400015BDA /* SingleViewPostViewController.swift */,
 				94B2E7251E52A19A00C33528 /* Follower */,
 				94B2E7241E52A18F00C33528 /* Following */,
 				94B2E7261E52A1AB00C33528 /* EditProfile */,
@@ -346,12 +355,15 @@
 				94B2E7191E51A0E600C33528 /* PostDetail.swift in Sources */,
 				94B2E71E1E521D4000C33528 /* FollowerTableViewCell.swift in Sources */,
 				941732521E4DAF2300D90FBE /* Insta_Gram.xcdatamodeld in Sources */,
+				94A060031E56862400015BDA /* SingleViewPostViewController.swift in Sources */,
+				94A060051E5694EF00015BDA /* MainProfile(extention).swift in Sources */,
 				C01F0A271E51929E00451A60 /* publishPostViewController.swift in Sources */,
 				94B2E7131E51727900C33528 /* EditProfileViewController.swift in Sources */,
 				94B2E7101E5166CC00C33528 /* MainProfileViewController.swift in Sources */,
 				94B2E72B1E52B2B600C33528 /* FollowerViewController.swift in Sources */,
 				94B2E7291E52B24600C33528 /* FollowingViewController.swift in Sources */,
 				94B2E7151E51908A00C33528 /* EditProfileViewController(Extension).swift in Sources */,
+				94B2E7371E55FD2300C33528 /* PostPictureCollectionViewCell.swift in Sources */,
 				94B2E7221E52200E00C33528 /* FollowingTableViewCell.swift in Sources */,
 				94B2E7171E51970800C33528 /* UserDetail.swift in Sources */,
 				9417324C1E4DAF2300D90FBE /* LoginViewController.swift in Sources */,
