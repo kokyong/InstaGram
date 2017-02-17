@@ -44,7 +44,9 @@ class LoginViewController: UIViewController {
         FIRAuth.auth()?.signIn(withEmail: userEmail.text!, password: userPassword.text!, completion: { (user,error) in
             
             if error != nil {
+                
                 print(error! as NSError)
+                self.showErrorAlert(errorMessage: "Email/Password Incorrect")
                 return
             }
             
@@ -62,6 +64,13 @@ class LoginViewController: UIViewController {
 
     }
     
+    
+    func showErrorAlert(errorMessage: String){
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle:  .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        
+        present(alert, animated:true, completion: nil)
 }
 
 
@@ -70,3 +79,4 @@ class LoginViewController: UIViewController {
 
 
    
+}
