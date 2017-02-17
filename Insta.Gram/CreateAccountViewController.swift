@@ -53,6 +53,8 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user,error) in
             
             if error != nil{
+            
+                self.showErrorAlert(errorMessage: "Email/Password Format Invalid")
                 print (error! as NSError)
                 return
             }
@@ -164,6 +166,9 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle:  .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okAction)
+        
+        present(alert, animated:true, completion: nil)
+
     }
     
 }
