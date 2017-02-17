@@ -13,6 +13,7 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var userImage: UIImageView!
     
     @IBOutlet weak var userEmail: UITextField!
@@ -35,7 +36,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+
     }
     
     /// Login Function
@@ -45,6 +46,7 @@ class LoginViewController: UIViewController {
             
             if error != nil {
                 print(error! as NSError)
+
                 return
             }
             
@@ -61,6 +63,9 @@ class LoginViewController: UIViewController {
         }
 
     }
+    
+    
+
     
 }
 
