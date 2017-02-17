@@ -13,7 +13,6 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var userImage: UIImageView!
     
     @IBOutlet weak var userEmail: UITextField!
