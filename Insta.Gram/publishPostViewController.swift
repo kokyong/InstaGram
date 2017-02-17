@@ -18,6 +18,8 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
     var displayNameInPost: String?
     var displayPictureInPost: String?
     var picker = UIImagePickerController()
+    var timeStamp : TimeInterval?
+
 
 
     @IBOutlet weak var previewImage: UIImageView!
@@ -60,9 +62,9 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
 
         picker.delegate = self
         
-        let editButtonItem = UIBarButtonItem.init(title: "Post", style: .done, target: self
+        let postButtonItem = UIBarButtonItem.init(title: "Post", style: .done, target: self
             , action: #selector(postButtonPressed))
-        navigationItem.rightBarButtonItem = editButtonItem
+        navigationItem.rightBarButtonItem = postButtonItem
         
         
         let uid = FIRAuth.auth()?.currentUser?.uid
@@ -133,6 +135,7 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
                                 "username" : self.displayNameInPost,
                                 "userDisplayPicture": self.displayPictureInPost  ,
                                 "caption" : self.writeCaption.text,
+                                "timestamp" : self.timeStamp,
                                 "postID" : idForPost] as [String : Any]
                     
                     let postFeed = ["\(idForPost)" : feed]
@@ -147,6 +150,23 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
         uploadTask.resume()
     }
 
+    
+    func timeAgo() -> String {
+        
+        guard let timeStamp = timeStamp
+            else {
+                
+                return("Time stamp format error")
+        }
+        
+        let sentTime = Date(timeIntervalSinceReferenceDate: timeStamp)
+        let dataformatter = DateFormatter()
+        dataformatter.dateFormat = "d / MM / yyyy (HH:mm:ss)"
+        
+        dataformatter.string(from: sentTime)
+        return dataformatter.string(from: sentTime)
+        
+    }
 
     func displayImagePickerGallery(){
         

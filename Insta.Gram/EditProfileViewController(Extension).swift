@@ -30,7 +30,7 @@ extension EditProfileViewController : UIImagePickerControllerDelegate, UINavigat
         if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
             
             print(editedImage)
-             uploadImage(image: editedImage)
+            uploadImage(image: editedImage)
             self.profilePictureEdit.image = editedImage
             
             
@@ -39,7 +39,7 @@ extension EditProfileViewController : UIImagePickerControllerDelegate, UINavigat
             print(originalImage)
             uploadImage(image: originalImage)
             self.profilePictureEdit.image = originalImage
-
+            
             
         }
         
@@ -47,8 +47,8 @@ extension EditProfileViewController : UIImagePickerControllerDelegate, UINavigat
         
     }
     
-
-
+    
+    
     //upload to storage
     func uploadImage(image: UIImage) {
         
@@ -68,9 +68,6 @@ extension EditProfileViewController : UIImagePickerControllerDelegate, UINavigat
         
         storageRef.child("ProfilePicture").child("\(storageNaming).jpeg").put(imageData, metadata: nil) { (meta,error) in
             
-            self.dismiss(animated: true, completion: nil)
-            
-            
             // error message
             if error != nil {
                 
@@ -81,34 +78,22 @@ extension EditProfileViewController : UIImagePickerControllerDelegate, UINavigat
             }
             
             //downlaodURL to database
-            if  let downloadURL = meta?.downloadURL()?.absoluteString {
+            if  let downloadURL = meta?.downloadURL() {
                 
                 print(downloadURL)
                 
-                let timeStamp = Date.timeIntervalSinceReferenceDate
-                let urlTimeStamp = (" \(timeStamp)")
-                
-                print(urlTimeStamp)
-                
-                let urlString = String(describing: downloadURL)
                 let uid = FIRAuth.auth()?.currentUser?.uid
                 let ref = FIRDatabase.database().reference()
                 
-                let profileDictionary : [String:Any] = ["TimeStamp" : urlTimeStamp, "ProfileImage" : urlString]
-                
-                ref.child("user").child(uid!).setValue(profileDictionary)
+                ref.child("users").child(uid!).updateChildValues(["profileURL":downloadURL.absoluteString])
                 
             }
             
         }
-    }
-    
-    func hello() {
         
-        
+        self.dismiss(animated: true, completion: nil)
         
     }
-    
     
     
     
