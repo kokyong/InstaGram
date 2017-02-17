@@ -135,7 +135,7 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
                                 "username" : self.displayNameInPost,
                                 "userDisplayPicture": self.displayPictureInPost  ,
                                 "caption" : self.writeCaption.text,
-                                "timestamp" : self.timeAgo(),
+                                "timestamp" : self.timeStamp,
                                 "postID" : idForPost] as [String : Any]
                     
                     let postFeed = ["\(idForPost)" : feed]

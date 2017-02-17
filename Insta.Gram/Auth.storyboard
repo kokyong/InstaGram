@@ -21,6 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CAZ-ri-57T">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8xX-Hq-CfO">
                                 <rect key="frame" x="67" y="132" width="240" height="128"/>
                                 <constraints>
@@ -78,8 +81,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="CAZ-ri-57T" firstAttribute="leading" secondItem="bUY-G1-xwY" secondAttribute="leading" id="0Vz-6w-tcU"/>
+                            <constraint firstItem="A92-6n-eKg" firstAttribute="top" secondItem="CAZ-ri-57T" secondAttribute="bottom" id="8Dn-bs-hPF"/>
                             <constraint firstItem="nJj-xQ-EAH" firstAttribute="centerX" secondItem="bUY-G1-xwY" secondAttribute="centerX" id="9Uc-2l-UA3"/>
                             <constraint firstItem="wCw-hZ-QMQ" firstAttribute="centerX" secondItem="bUY-G1-xwY" secondAttribute="centerX" id="A5U-Cj-117"/>
+                            <constraint firstItem="CAZ-ri-57T" firstAttribute="top" secondItem="P6E-T6-Bmp" secondAttribute="bottom" id="A7S-pr-o4G"/>
                             <constraint firstItem="c2r-It-T9z" firstAttribute="centerX" secondItem="bUY-G1-xwY" secondAttribute="centerX" id="Kb3-W6-Yiv"/>
                             <constraint firstItem="kXY-Vg-2y5" firstAttribute="top" secondItem="nJj-xQ-EAH" secondAttribute="bottom" constant="25" id="LBh-ax-lFg"/>
                             <constraint firstItem="wCw-hZ-QMQ" firstAttribute="top" secondItem="8xX-Hq-CfO" secondAttribute="bottom" constant="29" id="LJO-vz-cmr"/>
@@ -88,11 +94,13 @@
                             <constraint firstItem="nJj-xQ-EAH" firstAttribute="top" secondItem="c2r-It-T9z" secondAttribute="bottom" constant="16" id="kcA-m9-k0D"/>
                             <constraint firstItem="8xX-Hq-CfO" firstAttribute="top" secondItem="P6E-T6-Bmp" secondAttribute="bottom" constant="68" id="qwv-Cf-2oO"/>
                             <constraint firstItem="8xX-Hq-CfO" firstAttribute="centerX" secondItem="bUY-G1-xwY" secondAttribute="centerX" id="sNa-sv-qbI"/>
+                            <constraint firstAttribute="trailing" secondItem="CAZ-ri-57T" secondAttribute="trailing" id="wY8-3h-xjb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XSW-Tm-Ugv"/>
                     <connections>
                         <outlet property="activityLoader" destination="1Eb-8g-3Ky" id="4H6-Wj-Q2Y"/>
+                        <outlet property="backgroundImageView" destination="CAZ-ri-57T" id="DWm-tT-ZgT"/>
                         <outlet property="userButton" destination="nJj-xQ-EAH" id="fY3-Lf-wI7"/>
                         <outlet property="userEmail" destination="wCw-hZ-QMQ" id="kfd-6o-KnF"/>
                         <outlet property="userImage" destination="8xX-Hq-CfO" id="Ole-7g-pcY"/>

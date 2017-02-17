@@ -11,6 +11,7 @@ import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
 
+
 class TimelineViewController: UIViewController {
 
     
@@ -147,6 +148,7 @@ extension TimelineViewController: UITableViewDataSource {
         
         if let url = postNumber.userDisplayPicture {
             
+            
             if let data = try? Data(contentsOf: url) {
                 cell.displayPictureImageView.image = UIImage(data: data)
                 
@@ -183,28 +185,29 @@ extension TimelineViewController: UITableViewDataSource {
     
 }
 
-//extension UIImageView {
-//    
-//    func downloadImage(from imgURL: String!) {
-//        let url = URLRequest(url: URL(string: imgURL)!)
-//        
-//        let task = URLSession.shared.dataTask(with: url) {
-//            (data, response, error) in
-//            
-//            if error != nil {
-//                print(error!)
-//                return
-//            }
-//            
-//            DispatchQueue.main.async {
-//                self.image = UIImage(data: data!)
-//            }
-//            
-//        }
-//        
-//        task.resume()
-//    }
-//}
+extension UIImageView {
+    
+    func downloadImage(from imgURL: String!) {
+        let url = URLRequest(url: URL(string: imgURL)!)
+        
+        let task = URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data!)
+            }
+            
+        }
+        
+        task.resume()
+    }
+}
+
 
 
 
