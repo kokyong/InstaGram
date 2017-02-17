@@ -15,9 +15,11 @@ class MainProfileViewController: UIViewController {
     
     var userDetails : [UserDetail] = []
     var postDetails : [PostDetail] = []
+    var postImage : [PostPictureCollectionViewCell] = []
     var displayUserName = String()
     var displayUserProfile = String()
     var displayUserDescription = String()
+    var displayPostImage = String()
     
     
     let ref = FIRDatabase.database().reference()
@@ -68,9 +70,52 @@ class MainProfileViewController: UIViewController {
         
     }
     
+    func goToFollowing() {
+        
+        let storyboard = UIStoryboard(name: "MainProfile", bundle: Bundle.main)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "FollowingViewController") as? FollowingViewController else {return}
+        
+        navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    
+    
+    
+    @IBOutlet weak var followersButton: UIBarButtonItem!{
+        
+        
+        didSet{
+            
+            followersButton.action = #selector(goToFollower)
+            followersButton.target = self
+            
+            print("Go")
+            
+        }
+    }
+    
+    
+    @IBOutlet weak var followingButton: UIBarButtonItem!{
+        
+        didSet{
+            
+            followingButton.action = #selector(goToFollowing)
+            followingButton.target = self
+            
+            
+            
+        }
+    }
+    
+    
     // viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        postColectionView.dataSource = self
+        //postColectionView.delegate = self
         
         let uid = FIRAuth.auth()?.currentUser?.uid
         let ref = FIRDatabase.database().reference()
@@ -82,61 +127,32 @@ class MainProfileViewController: UIViewController {
             let displayName = value?["username"] as? String
             let displayDescription = value?["description"] as? String
             let displayPicture = value?["profileURL"] as? String
+            //let pathToImage = value?["pathToImage"] as? String
+            
+            
             
             self.displayUserProfile = displayPicture!
             self.displayUserName = displayName!
             self.displayUserDescription = displayDescription!
+            //self.displayPostImage = pathToImage!
             
             
             self.descriptionLabel.text = self.displayUserDescription
             self.navigationItem.title = self.displayUserName
-            //self.profilePicture.image = self.displayUserProfile
-            // dump(displayPicture)
-            //dump(displayName)
+            
             
             if let url = NSURL(string: self.displayUserProfile) {
                 if let data = NSData(contentsOf: url as URL) {
                     self.profilePicture.image = UIImage(data: data as Data)
                 }
             }
-
-        
+            
+            
         })
         
     }
 }
 
-//extension MainProfileViewController : UICollectionViewDataSource{
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return postDetails.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//        let postDetail = postDetails[indexPath.row]
-//
-//        guard let postCell = postColectionView.dequeueReusableCell(withIdentifier: postColectionView, for: indexPath) as? postColectionView
-//
-//            else {
-//                return UICollectionViewCell()
-//        }
-//
-//
-//        if let url = postDetail.postPicture {
-//
-//            if let data = try? Data(contentsOf: url) {
-//                postCell.followerPicture?.image = UIImage(data: data)
-//            }
-//        }
-//
-//        return postCell
-//
-//
-//    }
-//
-//
-//}
 
 
 

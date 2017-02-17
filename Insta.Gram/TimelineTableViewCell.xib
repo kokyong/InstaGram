@@ -44,14 +44,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2s-S9-mtQ">
-                        <rect key="frame" x="5" y="423" width="79" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="5" y="423" width="173" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3I2-5w-sQy">
-                        <rect key="frame" x="89" y="423" width="60" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="183" y="423" width="320" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="320" id="JOY-cr-5MM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -60,7 +63,7 @@
                         <state key="normal" title="Button"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXs-kF-3Yh">
-                        <rect key="frame" x="5" y="452" width="133" height="139.5"/>
+                        <rect key="frame" x="5" y="447" width="133" height="144.5"/>
                         <state key="normal" title="View All Comments"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kE2-XO-Yc1">
@@ -79,6 +82,7 @@
                     <constraint firstItem="eqU-M3-tH2" firstAttribute="top" secondItem="dc1-S4-K4I" secondAttribute="bottom" constant="8" id="OAe-v8-zqE"/>
                     <constraint firstAttribute="bottom" secondItem="kE2-XO-Yc1" secondAttribute="bottom" constant="5" id="V1Q-Bo-IkL"/>
                     <constraint firstItem="ySU-9D-jeN" firstAttribute="top" secondItem="wfT-ma-OQ4" secondAttribute="bottom" constant="10" id="Wdc-d4-TiL"/>
+                    <constraint firstAttribute="trailing" secondItem="3I2-5w-sQy" secondAttribute="trailing" constant="10" id="Ziq-wp-Yfc"/>
                     <constraint firstItem="wfT-ma-OQ4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="cry-1f-O8n"/>
                     <constraint firstItem="3I2-5w-sQy" firstAttribute="leading" secondItem="U2s-S9-mtQ" secondAttribute="trailing" constant="5" id="g8F-6Z-2Wk"/>
                     <constraint firstItem="U2s-S9-mtQ" firstAttribute="top" secondItem="eqU-M3-tH2" secondAttribute="bottom" constant="8" id="grB-C6-08x"/>
