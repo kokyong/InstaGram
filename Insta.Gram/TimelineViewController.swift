@@ -30,6 +30,8 @@ class TimelineViewController: UIViewController {
         }
     }
     
+    
+    
     @IBOutlet weak var addPostButtonPressed: UIBarButtonItem!{
         
         didSet{
@@ -60,19 +62,10 @@ class TimelineViewController: UIViewController {
         
     }
     
-    func pushToPofileController() {
-        
-        let storyboard = UIStoryboard(name: "MainProfile", bundle: Bundle.main)
-        guard let controller = storyboard.instantiateViewController(withIdentifier: "MainProfileViewController") as? MainProfileViewController else {return}
-        
-        
-        navigationController?.pushViewController(controller, animated: true)
 
-        
-    }
+    
+    
     //KY
-    
-    
     var posts: [PostDetail] = []
     var following = [String]()
     var dbRef : FIRDatabaseReference!
@@ -86,8 +79,46 @@ class TimelineViewController: UIViewController {
         
         fetchPost()
 
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logoutUser))
     
 }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+              navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logoutUser))
+    }
+    
+    func pushToPofileController() {
+        
+        let storyboard = UIStoryboard(name: "MainProfile", bundle: Bundle.main)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "MainProfileViewController") as? MainProfileViewController else {return}
+        
+        
+        navigationController?.pushViewController(controller, animated: true)
+        
+        
+    }
+    
+    func logoutUser() {
+        
+        do {
+            try FIRAuth.auth()?.signOut()
+            
+        }catch let logoutError {
+            print(logoutError)
+        }
+        
+//        self.dismiss(animated: true, completion: nil)
+        
+                            let storyboard = UIStoryboard(name: "Auth", bundle: Bundle.main)
+                            guard let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else {return}
+        
+                                self.present(controller, animated: false, completion: nil)
+        
+        
+    }
+    
 
     
     func pushToPostImage() {

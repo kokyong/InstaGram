@@ -61,14 +61,7 @@ class MainProfileViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     
-    func goToFollower() {
-        
-        let storyboard = UIStoryboard(name: "MainProfile", bundle: Bundle.main)
-        guard let controller = storyboard.instantiateViewController(withIdentifier: "FollowerViewController") as? FollowerViewController else {return}
-        
-        navigationController?.pushViewController(controller, animated: true)
-        
-    }
+
     
     func goToFollowing() {
         
@@ -93,6 +86,15 @@ class MainProfileViewController: UIViewController {
             print("Go")
             
         }
+    }
+    
+    func goToFollower() {
+        
+        let storyboard = UIStoryboard(name: "MainProfile", bundle: Bundle.main)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "FollowerViewController") as? FollowerViewController else {return}
+        
+        navigationController?.pushViewController(controller, animated: true)
+        
     }
     
     

@@ -12,7 +12,7 @@ import Firebase
 import Photos
 
 
-class publishPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class publishPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate{
     
     var imageArray: [UIImage] = []
     var displayNameInPost: String?
@@ -77,9 +77,7 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
             
             self.displayNameInPost = displayName
             dump(displayName)
-            
-            
-                    })
+                                })
         
         
         FIRDatabase.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -92,9 +90,18 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
             self.displayPictureInPost = displayPicture
             dump(displayPicture)
         })
+        
+        writeCaption.delegate = self
 
      
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        writeCaption.text = ""
+        
+    }
+    
+    
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -102,6 +109,8 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
 //        self.navigationController?.isNavigationBarHidden = true
 
     }
+    
+    
 
 
     func postButtonPressed (){
@@ -127,6 +136,9 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
                 return
             }
             
+            let timestamp = Date.timeIntervalSinceReferenceDate
+
+            
             imageRef.downloadURL(completion: {(url, error) in
                 if let url = url {
                     let feed = ["userID" : uid,
@@ -135,7 +147,7 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
                                 "username" : self.displayNameInPost,
                                 "userDisplayPicture": self.displayPictureInPost  ,
                                 "caption" : self.writeCaption.text,
-                                "timestamp" : self.timeStamp,
+                                "timestamp" : timestamp,
                                 "postID" : idForPost] as [String : Any]
                     
                     let postFeed = ["\(idForPost)" : feed]
@@ -148,25 +160,14 @@ class publishPostViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         uploadTask.resume()
+        
+            let storyboard = UIStoryboard(name: "Auth", bundle: Bundle.main)
+            guard let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else{return}
+        
+            self.present(controller, animated: false, completion: nil)
     }
 
     
-    func timeAgo() -> String {
-        
-        guard let timeStamp = timeStamp
-            else {
-                
-                return("Time stamp format error")
-        }
-        
-        let sentTime = Date(timeIntervalSinceReferenceDate: timeStamp)
-        let dataformatter = DateFormatter()
-        dataformatter.dateFormat = "d / MM / yyyy (HH:mm:ss)"
-        
-        dataformatter.string(from: sentTime)
-        return dataformatter.string(from: sentTime)
-        
-    }
 
     func displayImagePickerGallery(){
         
